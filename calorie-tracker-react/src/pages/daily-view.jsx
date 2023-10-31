@@ -1,4 +1,4 @@
-const FoodItemManagement = () => {
+const DailyView = () => {
 
     return (
         <main>
@@ -7,4 +7,4 @@ const FoodItemManagement = () => {
     )
 }
 
-export default FoodItemManagement 
+export default DailyView 
