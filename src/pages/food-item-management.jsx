@@ -2,7 +2,7 @@ const FoodItemManagement = () => {
 
     return (
         <main>
-            Food Management
+            <h2>Food Management</h2>
         </main>
     )
 }

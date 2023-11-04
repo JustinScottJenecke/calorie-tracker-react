@@ -2,7 +2,7 @@ const WeeklyView = () => {
 
     return (
         <main>
-            Weekly View
+            <h2>Weekly View</h2>
         </main>
     )
 }

@@ -2,7 +2,7 @@ const MonthlyView = () => {
 
     return (
         <main>
-            Monthly View
+            <h2>Monthly View</h2>
         </main>
     )
 }

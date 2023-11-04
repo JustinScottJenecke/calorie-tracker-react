@@ -1,7 +1,7 @@
 const PersonalManagement = () => {
     return (
         <main>
-            <h1>Personal Management</h1>
+            <h2>Personal Management</h2>
         </main>
     )
 }
