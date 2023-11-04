@@ -1,4 +1,4 @@
-const DailyView = () => {
+const DailyTracker = () => {
 
     return (
         <main>
@@ -7,4 +7,4 @@ const DailyView = () => {
     )
 }
 
-export default DailyView 
+export default DailyTracker 
