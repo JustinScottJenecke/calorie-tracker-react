@@ -2,7 +2,7 @@ const DailyView = () => {
 
     return (
         <main>
-            abcd
+            <h1>Daily View</h1>
         </main>
     )
 }

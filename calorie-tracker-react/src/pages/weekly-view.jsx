@@ -2,7 +2,7 @@ const WeeklyView = () => {
 
     return (
         <main>
-            abcd
+            Weekly View
         </main>
     )
 }

@@ -2,7 +2,7 @@ const FoodItemManagement = () => {
 
     return (
         <main>
-            abcd
+            Food Management
         </main>
     )
 }
