@@ -5,3 +5,5 @@ const PersonalManagement = () => {
         </main>
     )
 }
+
+export default PersonalManagement

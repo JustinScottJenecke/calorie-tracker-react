@@ -1,9 +1,12 @@
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
+import Root from "./pages/root";
 import DailyView from "./pages/daily-view"
 import MonthlyView from "./pages/monthly-view" 
 import WeeklyView from "./pages/weekly-view" 
 import FoodItemManagement from "./pages/daily-view" 
+import PersonalManagement from "./pages/personal-management"
+import Error from "./pages/error";
 
 import './App.css'
 import "./index.css";
@@ -11,8 +14,31 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DailyView/>,
-  },
+    element: <Root/>,
+    errorElement: <Error/>,
+    children: [
+      {
+        path: "tracker",
+        element: <DailyView/>,
+      },
+      {
+        path: "weekly-view",
+        element: <WeeklyView/>,
+      },
+      {
+        path: "monthly-view",
+        element: <MonthlyView/>,
+      },
+      {
+        path: "food-management",
+        element: <FoodItemManagement/>,
+      },
+      {
+        path: "personal-management",
+        element: <PersonalManagement/>,
+      }
+    ]
+  }
 ]);
 
 
