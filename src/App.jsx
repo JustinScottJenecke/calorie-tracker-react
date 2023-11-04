@@ -1,12 +1,12 @@
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
-import Root from "./pages/root";
 import DailyView from "./pages/daily-view"
 import MonthlyView from "./pages/monthly-view" 
 import WeeklyView from "./pages/weekly-view" 
 import FoodItemManagement from "./pages/daily-view" 
 import PersonalManagement from "./pages/personal-management"
-import Error from "./pages/error";
+import Error from "./layouts/error";
+import Root from "./layouts/root";
 
 import './App.css'
 import "./index.css";
