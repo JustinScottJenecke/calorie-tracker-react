@@ -5,22 +5,22 @@ const NavMenu = () => {
 
     return (
         <nav>
-            <ul>
-                <li>
-                    <Link to={`daily-tracker`}>Daily Tracker</Link>
-                </li>
-                <li>
-                    <Link to={`weekly-view`}>Weekly View</Link>
-                </li>
-                <li>
-                    <Link to={`monthly-view`}>Monthly View</Link>
-                </li>
-                <li>
-                    <Link to={`food-management`}>Food Management</Link>
-                </li>
-                <li>
-                    <Link to={`personal-management`}>Personal Management</Link>
-                </li>
+            <ul className='columns is-multiline'>
+                <Link to={`daily-tracker`} class='button column is-6'>
+                    Daily Tracker
+                </Link>
+                <Link to={`weekly-view`} class='button column is-6'>
+                    Weekly View
+                </Link>
+                <Link to={`monthly-view`} class='button column is-6'>
+                    Monthly View
+                </Link>
+                <Link to={`food-management`} class='button column is-6'>
+                    Food Management
+                </Link>
+                <Link to={`personal-management`} class='button column is-6'>
+                    Personal Management
+                </Link>
             </ul>
         </nav>
     )
