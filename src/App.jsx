@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <Error/>,
     children: [
       {
-        path: "tracker",
+        path: "daily-tracker",
         element: <DailyView/>,
       },
       {
