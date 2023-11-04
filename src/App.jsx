@@ -1,14 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+
+import DailyView from "./pages/daily-view"
+import MonthlyView from "./pages/monthly-view" 
+import WeeklyView from "./pages/weekly-view" 
+import FoodItemManagement from "./pages/daily-view" 
+
 import './App.css'
+import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <DailyView/>,
+  },
+]);
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <RouterProvider router={router} />
     </>
   )
 }
