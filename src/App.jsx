@@ -6,15 +6,21 @@ import WeeklyView from "./pages/weekly-view"
 import FoodItemManagement from "./pages/food-item-management" 
 import PersonalManagement from "./pages/personal-management"
 import Error from "./layouts/error";
-import Root from "./layouts/root";
+import Homepage from "./layouts/homepage";
 
 import './App.css'
 import "./index.css";
+import Navigation from "./layouts/navigation";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Homepage/>,
+    errorElement: <Error/>
+  },
+  {
+    path: "/*",
+    element: <Navigation/>,
     errorElement: <Error/>,
     children: [
       {
