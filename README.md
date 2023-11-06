@@ -1,8 +1,12 @@
 # React + Vite
 React kilojule/kilocalorie tracking application.
 
+<br>
+
 ## Flow Diagram & Component Documentation
 https://www.figma.com/file/9tp2YjhdHUkuhdwRmrC3T8/Lightning-Rat?type=whiteboard&node-id=0%3A1&t=lp8wrnamLWPBkJ7a-1
+
+<br>
 
 ## React + Vite
 
