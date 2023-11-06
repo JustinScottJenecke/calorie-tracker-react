@@ -2,7 +2,7 @@ const AddFoodModal = () => {
 
     return (
         <div>
-            abcd
+            Add Food
         </div>
     )
 }

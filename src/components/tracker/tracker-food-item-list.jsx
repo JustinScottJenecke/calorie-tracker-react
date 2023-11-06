@@ -1,8 +1,17 @@
 const TrackerFoodItemList = () => {
 
+    const mockItems = [1, 2, 3, 4, 5]
+
     return (
         <div>
-            abcd
+            Added Food Items
+            <ul>
+                {
+                    mockItems.map( (foodItem) => {
+                        return <li className="list">{foodItem}</li>
+                    })
+                }
+            </ul>
         </div>
     )
 }

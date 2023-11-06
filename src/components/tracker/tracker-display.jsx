@@ -2,7 +2,7 @@ const TrackerDisplay = () => {
 
     return (
         <div>
-            abcd
+            Kilojules and Macro-Nutrients
         </div>
     )
 }
