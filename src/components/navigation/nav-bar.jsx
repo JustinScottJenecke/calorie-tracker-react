@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
 
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
+                <Link to={`/`} className="navbar-item" href="https://bulma.io">
                     <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/> 
-                </a>
+                </Link>
 
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
@@ -16,33 +18,35 @@ const NavBar = () => {
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-start">
-                    <a className="navbar-item">
-                        Home
-                    </a>
+                    <Link to={`daily-tracker`} className="navbar-item">
+                        Daily Tracker
+                    </Link>
 
-                    <a className="navbar-item">
-                        Documentation
-                    </a>
+                    <Link to={`weekly-view`} className="navbar-item">
+                        Weekly View
+                    </Link>
+
+                    <Link to={`monthly-view`} className="navbar-item">
+                        Monthly View
+                    </Link>
 
                     <div className="navbar-item has-dropdown is-hoverable">
                         <a className="navbar-link">
-                            More
+                            Management
                         </a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item">
-                                About
-                            </a>
-                            <a className="navbar-item">
-                                Jobs
-                            </a>
-                            <a className="navbar-item">
-                                Contact
-                            </a>
+                            <Link to={`food-management`} className="navbar-item">
+                                Food Management
+                            </Link>
+                            <Link to={`personal-management`} className="navbar-item">
+                                Personal Management
+                            </Link>
                             <hr className="navbar-divider"/>
-                                <a className="navbar-item">
+                            {/* Legacy feature for feedback */}
+                                {/* <a className="navbar-item">
                                     Report an issue
-                                </a>
+                                </a> */}
                         </div>
                     </div>
                 </div>
