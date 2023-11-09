@@ -18,6 +18,22 @@ const DailyTracker = () => {
         updateEnergy(dailyEnergy + energy)
     }
 
+    const addProtein = (protein) => {
+        updateMacros(dailyMacros.protein + protein)
+    }
+
+    const addFats = (fats) => {
+        updateEnergy(dailyEnergy + energy)
+    }
+
+    const addCarbs = (carbs) => {
+        updateEnergy(dailyEnergy + energy)
+    }
+
+    const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
+        updateEnergy(dailyEnergy + energy)
+    }
+
     return (
         <main>
             <h2 className="title">Daily View</h2>
@@ -42,8 +58,10 @@ const DailyTracker = () => {
             <hr />
             <AddFoodModal />
             <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
-            <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
-            <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
+            <button className="button" onClick={() => {addProtein(500)}}>Add 10 Protein</button>
+            <button className="button" onClick={() => {addFats(500)}}>Add 10 Fats</button>
+            <button className="button" onClick={() => {addCarbs(500)}}>Add 10 Carbs</button>
+            {/* <button className="button" onClick={() => {(500)}}>Add mock food item</button> */}
         </main>
     )
 }
