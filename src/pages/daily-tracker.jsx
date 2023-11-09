@@ -12,26 +12,7 @@ const DailyTracker = () => {
         fats: 0,
         carbs: 0
     })
-    const [dailyFoodItems, updateFoodItems] = useState([])
-
-    const createFoodFactory = (name, energy, weight, protein, fats, carbs) => {
-        return {
-            // getName() {return name},
-            // getEnergy() {return energy},
-            // getWeight() {return weight},
-            // getProtein() {return protein},
-            // getFats() {return fats},
-            // getCarbs() {return carbs}
-            name: name,
-            energy: energy,
-            weight: weight,
-            macros: {
-                protein: protein,
-                fats: fats,
-                carbs: carbs
-            }
-        }
-    }
+    const [dailyFoodItems, updateFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
 
     const addItem = (energy) => {
         updateEnergy(dailyEnergy + energy)
@@ -41,11 +22,27 @@ const DailyTracker = () => {
         <main>
             <h2 className="title">Daily View</h2>
             <TrackerDisplay/>
+        
             {dailyEnergy}
+            <hr />
+            Daily Protein: {dailyMacros.protein}
+            <br />
+            Daily Fats: {dailyMacros.protein}
+            <br />
+            Daily Carbohydrates: {dailyMacros.protein}
+
+            <hr />
+            Daily Food: {
+                dailyFoodItems.map(foodItem => {
+                    return <li key={foodItem}>{foodItem}</li>
+                })
+            }
             <hr />
             <TrackerFoodItemList />
             <hr />
             <AddFoodModal />
+            <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
+            <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
             <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
         </main>
     )
