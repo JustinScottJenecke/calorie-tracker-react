@@ -12,7 +12,6 @@ const DailyTracker = () => {
     const [dailyFats, setFats] = useState(0)
     const [dailyCarbs, setCarbs] = useState(0)
 
-
     const [dailyFoodItems, setFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
 
     // ========= Business Logic =========
@@ -32,10 +31,13 @@ const DailyTracker = () => {
     const addProtein = (protein) => {
         setProtein( prev => prev + protein)
     }
+    // const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
+    //     setEnergy(dailyEnergy + energy)
+    // }
 
     // Food Item
-    const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
-        setEnergy(dailyEnergy + energy)
+    const addFoodItem = (mockItem) => {
+        setFoodItems([...dailyFoodItems, mockItem])
     }
 
     return (
@@ -56,9 +58,10 @@ const DailyTracker = () => {
                 })
             }
             <hr />
-            <TrackerFoodItemList />
+            {/* <TrackerFoodItemList /> */}
             <hr />
-            <AddFoodModal />
+            {/* <AddFoodModal /> */}
+            <button className="button" onClick={() => {addFoodItem('potato')}}>Add Food</button>
             <button className="button" onClick={() => {addEnergy(500)}}>Add 100 kj</button>
             <button className="button" onClick={() => {addProtein(10)}}>Add 10 Protein</button>
             <button className="button" onClick={() => {addFats(10)}}>Add 10 Fats</button>

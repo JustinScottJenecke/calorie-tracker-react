@@ -1,0 +1,69 @@
+[
+    {
+        "id": 0,
+        "name": "Oats",
+        "kjPer100G":1600,
+        "unit": "grams",
+        "macros": {
+            "protein": 12.8,
+            "fats": 7.6,
+            "carbohydrates": 57
+        }
+    },
+    {
+        "id": 1,
+        "name": "Chicken Breast (Skinless)",
+        "energy":750,
+        "unit": "grams",
+        "macros": {
+            "protein": 29.6,
+            "fats": 3.54,
+            "carbohydrates": 0.4
+        }
+    },
+    {
+        "id": 2,
+        "name": "Egg (whole)",
+        "energy":320,
+        "unit": "1",
+        "macros": {
+            "protein": 6.3,
+            "fats": 5,
+            "carbohydrates": 0.4
+        }
+    },    
+    {
+        "id": 3,
+        "name": "Egg (white)",
+        "energy":75,
+        "unit": "1",
+        "macros": {
+            "protein": 3.6,
+            "fats": 0.06,
+            "carbohydrates": 0.24
+        }
+    },    
+    {
+        "id": 4,
+        "name": "Beef Texan Steak",
+        "energy":780,
+        "unit": "grams",
+        "macros": {
+            "protein": 21.1,
+            "fats": 11.1,
+            "carbohydrates": 3
+        }
+    },
+    {
+        "id": 5,
+        "name": "Potato",
+        "energy":340,
+        "unit": "grams",
+        "macros": {
+            "protein": 2,
+            "fats": 0.1,
+            "carbohydrates": 17
+        }
+    }
+
+]
