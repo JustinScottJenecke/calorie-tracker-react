@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const DailyTracker = () => {
 
-    // State Variables
+    // ========= State Variables ========
     const [dailyEnergy, setEnergy] = useState(0)
     const [dailyProtein, setProtein] = useState(0)
     const [dailyFats, setFats] = useState(0)
@@ -15,26 +15,25 @@ const DailyTracker = () => {
 
     const [dailyFoodItems, setFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
 
-    // Business Logic
-    const addItem = (energy) => {
+    // ========= Business Logic =========
+
+    // Macro Calculator
+    const addEnergy = (energy) => {
         setEnergy(prev => prev + energy)
     }
-
     const addFats = (fats) => {
         setFats(prev => prev + fats)
     }
-
     const addCarbs = (carbs) => {
         setCarbs(prev => {
             return prev + carbs
         })
     }
-
     const addProtein = (protein) => {
-
         setProtein( prev => prev + protein)
     }
 
+    // Food Item
     const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
         setEnergy(dailyEnergy + energy)
     }
@@ -60,7 +59,7 @@ const DailyTracker = () => {
             <TrackerFoodItemList />
             <hr />
             <AddFoodModal />
-            <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
+            <button className="button" onClick={() => {addEnergy(500)}}>Add 100 kj</button>
             <button className="button" onClick={() => {addProtein(10)}}>Add 10 Protein</button>
             <button className="button" onClick={() => {addFats(10)}}>Add 10 Fats</button>
             <button className="button" onClick={() => {addCarbs(10)}}>Add 10 Carbs</button>
