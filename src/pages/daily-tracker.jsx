@@ -6,32 +6,40 @@ import { useState } from "react";
 
 const DailyTracker = () => {
 
-    const [dailyEnergy, updateEnergy] = useState(0)
-    const [dailyMacros, updateMacros] = useState({
+    // State Variables
+    const [dailyEnergy, setEnergy] = useState(0)
+    const [dailyMacros, setMacros] = useState({
         protein: 0,
         fats: 0,
         carbs: 0
     })
-    const [dailyFoodItems, updateFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
 
+
+    const [dailyFoodItems, setFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
+
+    // Business Logic
     const addItem = (energy) => {
-        updateEnergy(dailyEnergy + energy)
+        setEnergy(dailyEnergy + energy)
     }
 
     const addProtein = (protein) => {
-        updateMacros(dailyMacros.protein + protein)
+        setMacros({
+            protein: protein,
+            fats: 0,
+            carbs: 0
+        })
     }
 
     const addFats = (fats) => {
-        updateEnergy(dailyEnergy + energy)
+        setEnergy(dailyEnergy + energy)
     }
 
     const addCarbs = (carbs) => {
-        updateEnergy(dailyEnergy + energy)
+        setEnergy(dailyEnergy + energy)
     }
 
     const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
-        updateEnergy(dailyEnergy + energy)
+        setEnergy(dailyEnergy + energy)
     }
 
     return (
@@ -47,12 +55,12 @@ const DailyTracker = () => {
             <br />
             Daily Carbohydrates: {dailyMacros.protein}
 
-            <hr />
+            {/* <hr />
             Daily Food: {
                 dailyFoodItems.map(foodItem => {
                     return <li key={foodItem}>{foodItem}</li>
                 })
-            }
+            } */}
             <hr />
             <TrackerFoodItemList />
             <hr />
