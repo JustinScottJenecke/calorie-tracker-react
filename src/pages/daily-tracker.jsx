@@ -18,6 +18,18 @@ const DailyTracker = () => {
     const [dailyFoodItems, setFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
 
     // Business Logic
+
+    // junk code: not reccomended to use individual functions since objects in state should not be mutated
+    // and should be updated as a whole
+    
+    // const addFats = (fats) => {
+    //     setEnergy(dailyEnergy + energy)
+    // }
+
+    // const addCarbs = (carbs) => {
+    //     setEnergy(dailyEnergy + energy)
+    // }
+
     const addItem = (energy) => {
         setEnergy(dailyEnergy + energy)
     }
@@ -28,16 +40,6 @@ const DailyTracker = () => {
             fats: fats,
             carbs: carbs
         })
-    }
-
-    // junk code: not reccomended to use individual functions since objects in state should not be mutated
-    // and should be updated as a whole
-    const addFats = (fats) => {
-        setEnergy(dailyEnergy + energy)
-    }
-
-    const addCarbs = (carbs) => {
-        setEnergy(dailyEnergy + energy)
     }
 
     const addMockFoodItem = (FoodItem, energy, protein, fats, carbs) => {
