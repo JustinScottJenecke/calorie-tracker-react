@@ -22,14 +22,16 @@ const DailyTracker = () => {
         setEnergy(dailyEnergy + energy)
     }
 
-    const addProtein = (protein) => {
+    const addToMacros = (protein, fats, carbs) => {
         setMacros({
             protein: protein,
-            fats: 0,
-            carbs: 0
+            fats: fats,
+            carbs: carbs
         })
     }
 
+    // junk code: not reccomended to use individual functions since objects in state should not be mutated
+    // and should be updated as a whole
     const addFats = (fats) => {
         setEnergy(dailyEnergy + energy)
     }
