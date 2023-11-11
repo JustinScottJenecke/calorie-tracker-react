@@ -35,10 +35,9 @@ const DailyTracker = () => {
     }
 
     const addToMacros = (protein, fats, carbs) => {
-        setMacros({
-            protein: protein,
-            fats: fats,
-            carbs: carbs
+
+        setMacros( prevMacros => {
+            prevMacros.protein + 20
         })
     }
 
@@ -55,9 +54,9 @@ const DailyTracker = () => {
             <hr />
             Daily Protein: {dailyMacros.protein}
             <br />
-            Daily Fats: {dailyMacros.protein}
+            Daily Fats: {dailyMacros.fats}
             <br />
-            Daily Carbohydrates: {dailyMacros.protein}
+            Daily Carbohydrates: {dailyMacros.carbs}
 
             {/* <hr />
             Daily Food: {
@@ -70,9 +69,9 @@ const DailyTracker = () => {
             <hr />
             <AddFoodModal />
             <button className="button" onClick={() => {addItem(500)}}>Add 100 kj</button>
-            <button className="button" onClick={() => {addProtein(500)}}>Add 10 Protein</button>
-            <button className="button" onClick={() => {addFats(500)}}>Add 10 Fats</button>
-            <button className="button" onClick={() => {addCarbs(500)}}>Add 10 Carbs</button>
+            <button className="button" onClick={() => {addToMacros(10,0,0)}}>Add 10 Protein</button>
+            <button className="button" onClick={() => {addToMacros(0,10,0)}}>Add 10 Fats</button>
+            <button className="button" onClick={() => {addToMacros(0,0,10)}}>Add 10 Carbs</button>
             {/* <button className="button" onClick={() => {(500)}}>Add mock food item</button> */}
         </main>
     )
