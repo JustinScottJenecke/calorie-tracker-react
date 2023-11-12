@@ -14,7 +14,7 @@ const DailyTracker = () => {
 
     const [dailyFoodItems, setFoodItems] = useState([])
 
-    useEffect( () => {
+   // useEffect( () => {
         fetch('src/data/food-items.json',{
             headers : { 
               'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ const DailyTracker = () => {
           .then(response => response.json())
          // .then(data => console.log(data))
           .then(data => setFoodItems(data))
-    }, [])
+    //}, [])
 
     // ========= Business Logic =========
 
