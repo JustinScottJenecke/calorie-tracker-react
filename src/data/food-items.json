@@ -3,7 +3,9 @@
         "id": 0,
         "name": "Oats",
         "kjPer100G":1600,
-        "unit": "grams",
+        "unit": "100-grams",
+        "category": "porridge",
+        "serving": "30-grams",
         "macros": {
             "protein": 12.8,
             "fats": 7.6,
@@ -14,7 +16,9 @@
         "id": 1,
         "name": "Chicken Breast (Skinless)",
         "energy":750,
-        "unit": "grams",
+        "unit": "100-grams",
+        "category": "meat",
+        "serving": "",
         "macros": {
             "protein": 29.6,
             "fats": 3.54,
@@ -25,7 +29,9 @@
         "id": 2,
         "name": "Egg (whole)",
         "energy":320,
-        "unit": "1",
+        "unit": "1-whole",
+        "category": "egg",
+        "serving": "1",
         "macros": {
             "protein": 6.3,
             "fats": 5,
@@ -36,7 +42,9 @@
         "id": 3,
         "name": "Egg (white)",
         "energy":75,
-        "unit": "1",
+        "unit": "1-whole",
+        "category": "egg",
+        "serving": "1",
         "macros": {
             "protein": 3.6,
             "fats": 0.06,
@@ -47,7 +55,9 @@
         "id": 4,
         "name": "Beef Texan Steak",
         "energy":780,
-        "unit": "grams",
+        "unit": "100-grams",
+        "category": "meat",
+        "serving": "",
         "macros": {
             "protein": 21.1,
             "fats": 11.1,
@@ -58,12 +68,103 @@
         "id": 5,
         "name": "Potato",
         "energy":340,
-        "unit": "grams",
+        "unit": "100-grams",
+        "category": "starch",
+        "serving": "",
         "macros": {
             "protein": 2,
             "fats": 0.1,
             "carbohydrates": 17
         }
+    },
+    {
+        "id": 6,
+        "name": "Beef Mince",
+        "energy":1000,
+        "unit": "100-grams",
+        "category": "meat",
+        "serving": "",
+        "macros": {
+            "protein": 19.8,
+            "fats": 19.6,
+            "carbohydrates": 2
+        }
+    },
+    {
+        "id": 7,
+        "name": "Ground Beef",
+        "energy":850,
+        "unit": "100-grams",
+        "category": "meat",
+        "serving": "",
+        "macros": {
+            "protein": 18.20,
+            "fats": 14.10,
+            "carbohydrates": 1
+        }
+    },
+    {
+        "id": 8,
+        "name": "Whey Protein",
+        "energy":500,
+        "unit": "32-grams",
+        "category": "dairy",
+        "macros": {
+            "protein": 20,
+            "fats": 2,
+            "carbohydrates": 3
+        }
+    },
+    {
+        "id": 9,
+        "name": "Low Fat Milk",
+        "energy":200,
+        "unit": "100-ml",
+        "category": "dairy",
+        "serving": "250-ml",
+        "macros": {
+            "protein": 4,
+            "fats": 1.4,
+            "carbohydrates": 4
+        }
+    },
+    {
+        "id": 10,
+        "name": "Cereal (most)",
+        "energy":1600,
+        "unit": "100-grams",
+        "category": "cereal",
+        "serving": "30",
+        "macros": {
+            "protein": 4,
+            "fats": 1.4,
+            "carbohydrates": 4
+        }
+    },
+    {
+        "id": 11,
+        "name": "Instant Noodles (Maggi)",
+        "energy":1850,
+        "unit": "100-grams",
+        "category": "starch",
+        "serving": "73",
+        "macros": {
+            "protein": 9.8,
+            "fats": 16.4,
+            "carbohydrates": 56
+        }
+    },
+    {
+        "id": 12,
+        "name": "Peanut Butter (Yum-Yum)",
+        "energy":2400,
+        "unit": "100-grams",
+        "category": "nuts",
+        "serving": "15",
+        "macros": {
+            "protein": 20,
+            "fats": 46.5,
+            "carbohydrates": 28
+        }
     }
-
 ]
