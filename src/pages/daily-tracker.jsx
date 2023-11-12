@@ -77,7 +77,7 @@ const DailyTracker = () => {
     return (
         <main>
             <h2 className="title">Daily View</h2>
-            <TrackerDisplay />
+            <TrackerDisplay dailyProtein={dailyProtein}/>
             {dailyEnergy}
             <hr />
             Daily Protein: {dailyProtein}
@@ -86,7 +86,7 @@ const DailyTracker = () => {
             <br />
             Daily Carbohydrates: {dailyCarbs}
             <hr />
-            Daily Food: {
+            Tracked Food Items: {
                 dailyFoodItems.map(foodItem => {
                     return <li key={foodItem.id}>{foodItem.name}</li>
                 })

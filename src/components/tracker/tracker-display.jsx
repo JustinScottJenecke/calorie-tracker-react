@@ -1,7 +1,11 @@
-const TrackerDisplay = () => {
+import { useState } from "react"
+
+const TrackerDisplay = (props) => {
 
     // default unit is kj
     const energy = 0
+
+    const [dailyProtein, setDailyProtein] = useState(props.dailyProtein)
 
     const macroNutrients = {
         protein: 0,
@@ -27,7 +31,7 @@ const TrackerDisplay = () => {
                     <ul className="columns">
                         <div className="column is-flex-direction-column">
                             <div>Protein</div>
-                            <div>0</div>
+                            <div>{dailyProtein}</div>
                         </div>
                         <div className="column is-flex-direction-column">
                             <div>Fats</div>
