@@ -2,7 +2,7 @@ import TrackerDisplay from "../components/tracker/tracker-display";
 import TrackerFoodItemList from "../components/tracker/tracker-food-item-list";
 import AddFoodModal from "../components/tracker/add-food-modal";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DailyTracker = () => {
 
@@ -12,7 +12,29 @@ const DailyTracker = () => {
     const [dailyFats, setFats] = useState(0)
     const [dailyCarbs, setCarbs] = useState(0)
 
-    const [dailyFoodItems, setFoodItems] = useState(['oats', 'chicken', 'broccoli', 'rice'])
+    const [dailyFoodItems, setFoodItems] = useState([])
+
+    useEffect( () => {
+        fetch('src/data/food-items.json',{
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+          })
+          .then(response => response.json())
+         // .then(data => console.log(data))
+          .then(data => setFoodItems(data))
+    }, [])
+
+    // fetch('src/data/food-items.json',{
+    //     headers : { 
+    //       'Content-Type': 'application/json',
+    //       'Accept': 'application/json'
+    //      }
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => console.log(data))
+
 
     // ========= Business Logic =========
 
@@ -54,7 +76,7 @@ const DailyTracker = () => {
             <hr />
             Daily Food: {
                 dailyFoodItems.map(foodItem => {
-                    return <li key={foodItem}>{foodItem}</li>
+                    return <li key={foodItem.id}>{foodItem.name}</li>
                 })
             }
             <hr />
