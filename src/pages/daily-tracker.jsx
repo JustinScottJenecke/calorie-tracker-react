@@ -12,6 +12,7 @@ const DailyTracker = () => {
     const [dailyFats, setFats] = useState(0)
     const [dailyCarbs, setCarbs] = useState(0)
 
+    const [foodRepository, setFoodRepository] = useState([])
     const [dailyFoodItems, setFoodItems] = useState([])
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const DailyTracker = () => {
         })
             .then(response => response.json())
             // .then(data => console.log(data))
-            .then(data => setFoodItems(data))
+            .then(data => setFoodRepository(data))
     }, [])
 
     // ========= Business Logic =========
@@ -47,19 +48,28 @@ const DailyTracker = () => {
     // Food Item
     const addFoodItem = (mockItem) => {
 
+        // sets id for new food item
         mockFoodItem.id = dailyFoodItems.length
+
+        // adds macros and energy of food item
+        addEnergy(mockItem.energy)
+        addProtein(mockItem.macros.protein)
+        addFats(mockItem.macros.fats)
+        addCarbs(mockItem.macros.carbohydrates)
+
+        // appends food item to list
         setFoodItems([...dailyFoodItems, mockItem])
     }
 
     const mockFoodItem = {
         name: "Sweet Potato",
-        kjPer100G: 360,
+        energy: 360,
         unit: "100-grams",
         category: "starch",
         serving: "30-grams",
         macros: {
             protein: 1.6,
-            fats: 0,
+            fats: 0.2,
            carbohydrates: 20
         }
     }
