@@ -26,16 +26,6 @@ const DailyTracker = () => {
           .then(data => setFoodItems(data))
     }, [])
 
-    // fetch('src/data/food-items.json',{
-    //     headers : { 
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json'
-    //      }
-    //   })
-    //   .then(response => response.json())
-    //   .then(data => console.log(data))
-
-
     // ========= Business Logic =========
 
     // Macro Calculator
