@@ -1,5 +1,5 @@
 import TrackerDisplay from "../components/tracker/tracker-display";
-import TrackerFoodItemList from "../components/tracker/tracker-food-item-list";
+import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
 import AddFoodModal from "../components/tracker/add-food-modal";
 
 import { useState, useEffect } from "react";
@@ -13,7 +13,7 @@ const DailyTracker = () => {
     const [dailyCarbs, setCarbs] = useState(0)
 
     const [foodRepository, setFoodRepository] = useState([])
-    const [dailyFoodItems, setFoodItems] = useState([])
+    const [trackedFoodItems, setFoodItems] = useState([])
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -49,7 +49,7 @@ const DailyTracker = () => {
     const addFoodItem = (mockItem) => {
 
         // sets id for new food item
-        mockFoodItem.id = dailyFoodItems.length
+        mockFoodItem.id = trackedFoodItems.length
 
         // adds macros and energy of food item
         addEnergy(mockItem.energy)
@@ -58,7 +58,7 @@ const DailyTracker = () => {
         addCarbs(mockItem.macros.carbohydrates)
 
         // appends food item to list
-        setFoodItems([...dailyFoodItems, mockItem])
+        setFoodItems([...trackedFoodItems, mockItem])
     }
 
     const mockFoodItem = {
@@ -70,22 +70,28 @@ const DailyTracker = () => {
         macros: {
             protein: 1.6,
             fats: 0.2,
-           carbohydrates: 20
+            carbohydrates: 20
         }
     }
 
     return (
         <main>
             <h2 className="title">Daily View</h2>
-            <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs}/>
+            <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
-            <h3>Tracked Food Items:</h3> 
-            {
-                dailyFoodItems.map(foodItem => {
-                    return <li key={foodItem.id}>{foodItem.name}</li>
-                })
-            }
-            {/* <TrackerFoodItemList /> */}
+            <section className="columns">
+                <aside className="column is-6">
+                    <h3 className="subtitle">Food Item Repository:</h3>
+                    {
+                        foodRepository.map(foodItem => {
+                            return <li key={foodItem.id}>{foodItem.name}</li>
+                        })
+                    }
+                </aside>
+                <aside className="column is-6">
+                    <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
+                </aside>
+            </section>
             <hr />
             {/* <AddFoodModal /> */}
             <button className="button" onClick={() => { addFoodItem(mockFoodItem) }}>Add Food</button>
