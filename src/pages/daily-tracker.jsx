@@ -46,19 +46,33 @@ const DailyTracker = () => {
     }
 
     // Food Item
-    const addFoodItem = (mockItem) => {
+    const addFoodItem = (foodItem) => {
 
         // sets id for new food item
-        mockFoodItem.id = trackedFoodItems.length
+        foodItem.trackedId = trackedFoodItems.length
 
         // adds macros and energy of food item
-        addEnergy(mockItem.energy)
-        addProtein(mockItem.macros.protein)
-        addFats(mockItem.macros.fats)
-        addCarbs(mockItem.macros.carbohydrates)
+        addEnergy(foodItem.energy)
+        addProtein(foodItem.macros.protein)
+        addFats(foodItem.macros.fats)
+        addCarbs(foodItem.macros.carbohydrates)
 
         // appends food item to list
-        setFoodItems([...trackedFoodItems, mockItem])
+        setFoodItems([...trackedFoodItems, foodItem])
+    }
+
+    const addFoodFromRepo = (selectedId) => {
+
+        let selectedFood;
+
+        foodRepository.forEach(foodItem => {
+            if (foodItem.id === selectedId) {
+                selectedFood = foodItem
+            }
+        });
+
+        if (selectedFood) 
+            addFoodItem(selectedFood)
     }
 
     const mockFoodItem = {
@@ -84,7 +98,11 @@ const DailyTracker = () => {
                     <h3 className="subtitle">Food Item Repository:</h3>
                     {
                         foodRepository.map(foodItem => {
-                            return <li key={foodItem.id}>{foodItem.name}</li>
+                            return (
+                                <li key={foodItem.id}>
+                                    {foodItem.name} - <button>Add</button>
+                                </li>
+                            )
                         })
                     }
                 </aside>
@@ -94,7 +112,7 @@ const DailyTracker = () => {
             </section>
             <hr />
             {/* <AddFoodModal /> */}
-            <button className="button" onClick={() => { addFoodItem(mockFoodItem) }}>Add Food</button>
+            <button className="button" onClick={() => { addFoodFromRepo(2) }}>Add Food</button>
             <button className="button" onClick={() => { addEnergy(500) }}>Add 100 kj</button>
             <button className="button" onClick={() => { addProtein(10) }}>Add 10 Protein</button>
             <button className="button" onClick={() => { addFats(10) }}>Add 10 Fats</button>
