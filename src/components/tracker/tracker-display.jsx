@@ -5,12 +5,10 @@ const TrackerDisplay = (props) => {
     // default unit is kj
     const energy = 0
 
-    const [dailyProtein, setDailyProtein] = useState(props.dailyProtein)
-
     const macroNutrients = {
-        protein: 0,
-        fats: 0,
-        carbohydrates: 0
+        protein: props.dailyProtein,
+        fats: props.dailyFats,
+        carbohydrates: props.dailyCarbs
     }
 
     return (
@@ -31,15 +29,15 @@ const TrackerDisplay = (props) => {
                     <ul className="columns">
                         <div className="column is-flex-direction-column">
                             <div>Protein</div>
-                            <div>{dailyProtein}</div>
+                            <div>{macroNutrients.protein}</div>
                         </div>
                         <div className="column is-flex-direction-column">
                             <div>Fats</div>
-                            <div>0</div>
+                            <div>{macroNutrients.fats}</div>
                         </div>
                         <div className="column is-flex-direction-column">
                             <div>Carbohydrates</div>
-                            <div>0</div>
+                            <div>{macroNutrients.carbohydrates}</div>
                         </div>
                     </ul>
                 </div>
