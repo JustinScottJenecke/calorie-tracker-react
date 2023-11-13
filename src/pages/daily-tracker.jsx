@@ -77,7 +77,7 @@ const DailyTracker = () => {
     return (
         <main>
             <h2 className="title">Daily View</h2>
-            <TrackerDisplay dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs}/>
+            <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs}/>
             <hr />
             <h3>Tracked Food Items:</h3> 
             {

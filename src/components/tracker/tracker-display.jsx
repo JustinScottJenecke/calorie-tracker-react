@@ -3,7 +3,7 @@ import { useState } from "react"
 const TrackerDisplay = (props) => {
 
     // default unit is kj
-    const energy = 0
+    const energy = props.dailyEnergy
 
     const macroNutrients = {
         protein: props.dailyProtein,
@@ -19,11 +19,11 @@ const TrackerDisplay = (props) => {
                     Energy and Macronutrients
                 </h2>
             </section>
-
+            <hr></hr>
             <section className="columns">
                 <div className="column is-4 is-flex-direction-column">
                     <div>Total</div>
-                    <div>0</div>
+                    <div>{energy}</div>
                 </div>
                 <div className="column is-8">
                     <ul className="columns">
