@@ -118,7 +118,7 @@ const DailyTracker = () => {
                         foodRepository.map(foodItem => {
                             return (
                                 <li key={foodItem.id}>
-                                    {foodItem.id} - {foodItem.name} - <button>Add</button>
+                                    {foodItem.id} - {foodItem.name} - <button onClick={ () => {addFoodFromRepo(foodItem.id)}}>Add</button>
                                 </li>
                             )
                         })
