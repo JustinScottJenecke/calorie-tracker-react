@@ -64,21 +64,34 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
         // tests to see what size and unit serving is measured in eg: 100, grams
         //console.log(servingSize, servingUnit)
 
-        // test to print out energy before conversion
+        // tests to print out energy before conversion:
+
+        // Test 1:
         //console.log(unit + " of " + foodItem.name + ' has ' + energy + 'kj')
+
+        // Test 2:
+        
+        console.log(`
+            ${unit} of ${foodItem.name} has: 
+                - ${energy} kj \n
+                - Protein: ${macros.protein}g \n
+                - Fats: ${macros.fats}g \n
+                - Carbs: ${macros.carbohydrates}g
+        `)
+        
 
         // calc energy and macros based of user's serving input
         energy = calcEnergyAndMacrosHelper(energy, servingSize, servingInput)
         macros.protein = calcEnergyAndMacrosHelper(macros.protein, servingSize, servingInput)
         macros.fats = calcEnergyAndMacrosHelper(macros.fats, servingSize, servingInput)
-        macros.carbs = calcEnergyAndMacrosHelper(macros.carbs, servingSize, servingInput)
+        macros.carbohydrates = calcEnergyAndMacrosHelper(macros.carbohydrates, servingSize, servingInput)
 
         console.log(`
             ${servingInput} ${servingUnit} of ${foodItem.name} has: 
                 - ${energy} kj \n
-                - ${macros.protein}g \n
-                - ${macros.fats}g \n
-                - ${macros.carbs}g
+                - Protein: ${macros.protein}g \n
+                - Fats: ${macros.fats}g \n
+                - Carbs: ${macros.carbohydrates}g
         `)
     }
 }
