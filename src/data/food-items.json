@@ -2,7 +2,7 @@
     {
         "id": 0,
         "name": "Oats",
-        "kjPer100G":1600,
+        "energy":1600,
         "unit": "100-grams",
         "category": "porridge",
         "serving": "30-grams",

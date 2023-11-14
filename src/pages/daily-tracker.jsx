@@ -49,7 +49,7 @@ const DailyTracker = () => {
     const addFoodItem = (foodItem) => {
 
         // sets id for new food item
-        foodItem.trackedId = trackedFoodItems.length
+        foodItem.id = trackedFoodItems.length
 
         // adds macros and energy of food item
         addEnergy(foodItem.energy)
@@ -67,12 +67,30 @@ const DailyTracker = () => {
 
         foodRepository.forEach(foodItem => {
             if (foodItem.id === selectedId) {
-                selectedFood = foodItem
+                //selectedFood = foodItem
+
+                const {name, energy, unit, category, serving, macros} = foodItem
+
+                selectedFood = {
+                    name: name,
+                    energy: energy,
+                    unit: unit,
+                    category: category,
+                    serving: serving,
+                    macros: macros
+                }
             }
         });
 
-        if (selectedFood) 
+        if (selectedFood) {
             addFoodItem(selectedFood)
+
+            console.log(selectedFood)
+            console.log(trackedFoodItems)    
+
+            return true
+        } else 
+            return false
     }
 
     const mockFoodItem = {
@@ -100,7 +118,7 @@ const DailyTracker = () => {
                         foodRepository.map(foodItem => {
                             return (
                                 <li key={foodItem.id}>
-                                    {foodItem.name} - <button>Add</button>
+                                    {foodItem.id} - {foodItem.name} - <button>Add</button>
                                 </li>
                             )
                         })
