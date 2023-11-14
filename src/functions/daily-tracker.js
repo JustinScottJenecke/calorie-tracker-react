@@ -93,5 +93,13 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
                 - Fats: ${macros.fats}g \n
                 - Carbs: ${macros.carbohydrates}g
         `)
+    } else {            
+        console.log(`
+            ${unit} of ${foodItem.name} has: 
+                - ${energy} kj \n
+                - Protein: ${macros.protein}g \n
+                - Fats: ${macros.fats}g \n
+                - Carbs: ${macros.carbohydrates}g
+        `)
     }
 }
