@@ -1,4 +1,4 @@
-import { calcEnergyAndMacros } from "../../functions/daily-tracker";
+import { energyAndMacroConverter } from "../../functions/daily-tracker";
 
 
 const TEST = () => {
@@ -17,7 +17,7 @@ const TEST = () => {
         "id": 0
     }
 
-    calcEnergyAndMacros(mockObject, 75)
+    energyAndMacroConverter(mockObject, 75)
 
     return (
         <>
