@@ -2,6 +2,12 @@ import { useState } from "react"
 
 const TrackerDisplay = (props) => {
 
+    // ========= state =========
+
+    const [energyUnit, setEnergyUnit] = useState('kj')
+
+    // ========= variables =========
+
     // default unit is kj
     const energy = props.dailyEnergy
 
@@ -23,21 +29,21 @@ const TrackerDisplay = (props) => {
             <section className="columns">
                 <div className="column is-4 is-flex-direction-column">
                     <div>Total</div>
-                    <div>{energy}</div>
+                    <div>{energy} {energyUnit}</div>
                 </div>
                 <div className="column is-8">
                     <ul className="columns">
                         <div className="column is-flex-direction-column">
                             <div>Protein</div>
-                            <div>{macroNutrients.protein}</div>
+                            <div>{macroNutrients.protein.toFixed(2)}g</div>
                         </div>
                         <div className="column is-flex-direction-column">
                             <div>Fats</div>
-                            <div>{macroNutrients.fats}</div>
+                            <div>{macroNutrients.fats.toFixed(2)}g</div>
                         </div>
                         <div className="column is-flex-direction-column">
                             <div>Carbohydrates</div>
-                            <div>{macroNutrients.carbohydrates}</div>
+                            <div>{macroNutrients.carbohydrates.toFixed(2)}g</div>
                         </div>
                     </ul>
                 </div>
