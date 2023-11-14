@@ -65,7 +65,7 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
         //console.log(servingSize, servingUnit)
 
         // test to print out energy before conversion
-        console.log(unit + " of " + foodItem.name + ' has ' + energy + 'kj')
+        //console.log(unit + " of " + foodItem.name + ' has ' + energy + 'kj')
 
         // calc energy and macros based of user's serving input
         energy = calcEnergyAndMacrosHelper(energy, servingSize, servingInput)
@@ -73,7 +73,12 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
         macros.fats = calcEnergyAndMacrosHelper(macros.fats, servingSize, servingInput)
         macros.carbs = calcEnergyAndMacrosHelper(macros.carbs, servingSize, servingInput)
 
-        console.log(servingInput, servingUnit + " of " + foodItem.name + ' has ' + energy + 'kj')
-
+        console.log(`
+            ${servingInput} ${servingUnit} of ${foodItem.name} has: 
+                - ${energy} kj \n
+                - ${macros.protein}g \n
+                - ${macros.fats}g \n
+                - ${macros.carbs}g
+        `)
     }
 }
