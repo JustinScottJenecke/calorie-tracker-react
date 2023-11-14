@@ -1,6 +1,5 @@
 import { energyAndMacroConverter } from "../../functions/daily-tracker";
 
-
 const TEST = () => {
 
     const mockObjectGrams = {
@@ -30,22 +29,22 @@ const TEST = () => {
     }
 
     const mockObjectWhole = {
-            "id": 2,
-            "name": "Egg (whole)",
-            "energy":320,
-            "unit": "1-whole",
-            "category": "egg",
-            "serving": "1",
-            "macros": {
-                "protein": 6.3,
-                "fats": 5,
-                "carbohydrates": 0.4
-            }
+        "id": 2,
+        "name": "Egg (whole)",
+        "energy": 320,
+        "unit": "1-whole",
+        "category": "egg",
+        "serving": "1",
+        "macros": {
+            "protein": 6.3,
+            "fats": 5,
+            "carbohydrates": 0.4
+        }
     }
 
+    const convertedObject = energyAndMacroConverter(mockObjectGrams, 200)
 
-
-    energyAndMacroConverter(mockObjectWhole)
+    console.log(convertedObject)
 
     return (
         <>

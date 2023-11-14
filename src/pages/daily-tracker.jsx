@@ -2,6 +2,8 @@ import TrackerDisplay from "../components/tracker/tracker-display";
 import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
 import AddFoodModal from "../components/tracker/add-food-modal";
 
+import { energyAndMacroConverter } from "../functions/daily-tracker";
+
 import { useState, useEffect } from "react";
 
 const DailyTracker = () => {

@@ -68,9 +68,8 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
 
         // Test 1:
         //console.log(unit + " of " + foodItem.name + ' has ' + energy + 'kj')
-
         // Test 2:
-        
+        /*
         console.log(`
             ${unit} of ${foodItem.name} has: 
                 - ${energy} kj \n
@@ -78,22 +77,20 @@ export const energyAndMacroConverter = (foodItem, servingInput) => {
                 - Fats: ${macros.fats}g \n
                 - Carbs: ${macros.carbohydrates}g
         `)
-        
+        */
 
         // calc energy and macros based of user's serving input
-        energy = calcEnergyAndMacrosHelper(energy, servingSize, servingInput)
-        macros.protein = calcEnergyAndMacrosHelper(macros.protein, servingSize, servingInput)
-        macros.fats = calcEnergyAndMacrosHelper(macros.fats, servingSize, servingInput)
-        macros.carbohydrates = calcEnergyAndMacrosHelper(macros.carbohydrates, servingSize, servingInput)
+        foodItem.energy = calcEnergyAndMacrosHelper(energy, servingSize, servingInput)
+        foodItem.macros.protein = calcEnergyAndMacrosHelper(macros.protein, servingSize, servingInput)
+        foodItem.macros.fats = calcEnergyAndMacrosHelper(macros.fats, servingSize, servingInput)
+        foodItem.macros.carbohydrates = calcEnergyAndMacrosHelper(macros.carbohydrates, servingSize, servingInput)
 
-        console.log(`
-            ${servingInput} ${servingUnit} of ${foodItem.name} has: 
-                - ${energy} kj \n
-                - Protein: ${macros.protein}g \n
-                - Fats: ${macros.fats}g \n
-                - Carbs: ${macros.carbohydrates}g
-        `)
-    } else {            
+        return foodItem
+        
+    } else {
+        
+        return foodItem
+
         console.log(`
             ${unit} of ${foodItem.name} has: 
                 - ${energy} kj \n
