@@ -2,10 +2,10 @@
  * About: Util functions for business logic of the daily tracker domain
  */
 
- const defaultFunction = () => {
 
-}
-
+/**
+ * 
+ */
 export const createFoodFactory = (name, energy, weight, protein, fats, carbs) => {
     return {
         // getName() {return name},
@@ -23,4 +23,16 @@ export const createFoodFactory = (name, energy, weight, protein, fats, carbs) =>
             carbs: carbs
         }
     }
+}
+
+/**
+ * Name: calcEnergyAndMacros
+ * calculates energy per serving size for selected item
+ * @param {object} foodItem
+ * @param {number} servingSize
+ */
+export const calcEnergyAndMacros = (foodItem, servingSize) => {
+    const {energy, unit, serving, macros} = foodItem
+
+    console.log(energy, unit, serving, macros)
 }
