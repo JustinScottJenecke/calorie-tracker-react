@@ -42,7 +42,7 @@ const TEST = () => {
         }
     }
 
-    const convertedObject = energyAndMacroConverter(mockObjectGrams, 200)
+    const convertedObject = energyAndMacroConverter(mockObjectGrams, 100)
 
     console.log(convertedObject)
 
