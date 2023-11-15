@@ -3,7 +3,6 @@ import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
 import AddFoodModal from "../components/tracker/add-food-modal";
 
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
-
 import { useState, useEffect } from "react";
 
 const DailyTracker = () => {
@@ -117,9 +116,15 @@ const DailyTracker = () => {
                     <h3 className="subtitle">Food Item Repository:</h3>
                     {
                         foodRepository.map(foodItem => {
+
+                            const [servingSize, servingUnit] = foodItem.unit.split("-")
+
                             return (
                                 <li key={foodItem.id}>
-                                    {foodItem.id} - {foodItem.name} - <button onClick={ () => {TrackFoodItem(foodItem.id)}}>Add</button>
+                                    {foodItem.id} 
+                                    - {foodItem.name} 
+                                    - <input type="number" /> {servingUnit}
+                                    - <button onClick={ () => {TrackFoodItem(foodItem.id)}}>Add</button> 
                                 </li>
                             )
                         })
