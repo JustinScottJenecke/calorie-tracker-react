@@ -63,7 +63,7 @@ const DailyTracker = () => {
         setFoodItems([...trackedFoodItems, foodItem])
     }
 
-    const trackFoodItem = (selectedId) => {
+    const trackFoodItem = (selectedId, selectedServing) => {
 
         let selectedFood;
 
@@ -86,7 +86,7 @@ const DailyTracker = () => {
 
         if (selectedFood) {
 
-            calcEnergyAndMacrosByServing(selectedFood, 50)
+            calcEnergyAndMacrosByServing(selectedFood, selectedServing)
             addFoodItem(selectedFood) 
 
             return true
@@ -133,7 +133,7 @@ const DailyTracker = () => {
             </section>
             <hr />
             {/* <AddFoodModal /> */}
-            <button className="button" onClick={() => { addFoodFromRepo(2) }}>Add Food</button>
+            <button className="button" onClick={() => { addFoodFromRepo(1) }}>Add Food</button>
             <button className="button" onClick={() => { addEnergy(500) }}>Add 100 kj</button>
             <button className="button" onClick={() => { addProtein(10) }}>Add 10 Protein</button>
             <button className="button" onClick={() => { addFats(10) }}>Add 10 Fats</button>
