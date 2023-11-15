@@ -85,10 +85,9 @@ const DailyTracker = () => {
         });
 
         if (selectedFood) {
-            addFoodItem(selectedFood)
 
-            console.log(selectedFood)
-            console.log(trackedFoodItems)    
+            calcEnergyAndMacrosByServing(selectedFood, 50)
+            addFoodItem(selectedFood) 
 
             return true
         } else 
