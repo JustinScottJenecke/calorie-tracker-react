@@ -2,7 +2,7 @@ import TrackerDisplay from "../components/tracker/tracker-display";
 import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
 import AddFoodModal from "../components/tracker/add-food-modal";
 
-import { energyAndMacroConverter } from "../functions/daily-tracker";
+import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 
 import { useState, useEffect } from "react";
 
@@ -63,7 +63,7 @@ const DailyTracker = () => {
         setFoodItems([...trackedFoodItems, foodItem])
     }
 
-    const addFoodFromRepo = (selectedId) => {
+    const TrackFoodItem = (selectedId) => {
 
         let selectedFood;
 
@@ -120,7 +120,7 @@ const DailyTracker = () => {
                         foodRepository.map(foodItem => {
                             return (
                                 <li key={foodItem.id}>
-                                    {foodItem.id} - {foodItem.name} - <button onClick={ () => {addFoodFromRepo(foodItem.id)}}>Add</button>
+                                    {foodItem.id} - {foodItem.name} - <button onClick={ () => {TrackFoodItem(foodItem.id)}}>Add</button>
                                 </li>
                             )
                         })

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { energyAndMacroConverter } from "../../functions/daily-tracker";
+import { calcEnergyAndMacrosByServing } from "../../functions/daily-tracker";
 
 const TEST = () => {
 
@@ -55,7 +55,7 @@ const TEST = () => {
                 Test
             </p>
             <button onClick={ () => {
-                let convertedObject = energyAndMacroConverter(testFoodRepo[1], 200)
+                let convertedObject = calcEnergyAndMacrosByServing(testFoodRepo[1], 200)
                 
                 convertedObject.id = testFoodItems.length
 
