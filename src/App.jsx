@@ -11,6 +11,7 @@ import Homepage from "./layouts/homepage";
 import './App.css'
 import "./index.css";
 import Navigation from "./layouts/navigation";
+import TEST from "./pages/test";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         element: <PersonalManagement/>,
       }
     ]
+  },
+  {
+    path: "TEST",
+    element: <TEST/>,
+    errorElement: <Error/>
   }
 ]);
 
