@@ -2,6 +2,14 @@ import { useState } from "react"
 
 const FoodItem = (props) => {
 
+    // Component State
+
+    /**
+     * State variable to dictate which template of component should be rendered 
+     * @param {("repository"|"tracked"|"management")} 
+     */
+    const [useCase, setUseCase] = useState('repository') 
+
     // extract serving unit from food item
     const foodItem = props.foodItem
     const [servingSize, servingUnit] = foodItem.unit.split("-")
@@ -15,13 +23,13 @@ const FoodItem = (props) => {
             {/* <li>ID: {foodItem.id}</li> */}
             <li className="subtitle has-text-centered">{foodItem.name}</li>
             <li>Details:</li>
-            <li>Energy: {foodItem.energy}kj per {foodItem.unit}</li>
-            <li>Category: {foodItem.category}</li>
+            <li>- Energy: {foodItem.energy}kj per {foodItem.unit}</li>
+            <li>- Category: {foodItem.category}</li>
             <li className="mt-4">Macros:</li>
                 <ul className="columns">
-                    <li className="column">Protein: {foodItem.macros.protein}g</li>
-                    <li className="column">Fats: {foodItem.macros.fats}g</li>
-                    <li className="column">Carbohydrates: {foodItem.macros.carbohydrates}g</li>
+                    <li className="column">- Protein: {foodItem.macros.protein}g</li>
+                    <li className="column">- Fats: {foodItem.macros.fats}g</li>
+                    <li className="column">- Carbohydrates: {foodItem.macros.carbohydrates}g</li>
                 </ul>
             </ul>
             <div className="mt-4">
