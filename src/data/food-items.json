@@ -80,13 +80,13 @@
     {
         "id": 6,
         "name": "Beef Mince",
-        "energy":1000,
+        "energy":850,
         "unit": "100-grams",
         "category": "meat",
         "serving": "",
         "macros": {
-            "protein": 19.8,
-            "fats": 19.6,
+            "protein": 19,
+            "fats": 13.6,
             "carbohydrates": 2
         }
     },
