@@ -2,13 +2,15 @@ import { useState } from "react"
 
 const FoodItem = (props) => {
 
-    // Component State
+    //====== Component State ======
 
     /**
      * State variable to dictate which template of component should be rendered 
      * @param {("repository"|"tracked"|"management")} 
      */
     const [useCase, setUseCase] = useState('repository') 
+
+    //====== Business Logic and Variables ======
 
     // extract serving unit from food item
     const foodItem = props.foodItem
@@ -17,10 +19,12 @@ const FoodItem = (props) => {
     // hooks
     const [servingSizeState, setServingSizeState] = useState(servingSize)
 
+    //====== Template ======
+
     return (
         <div className="box">
             <ul>
-            {/* <li>ID: {foodItem.id}</li> */}
+            <li>ID: {foodItem.id}</li>
             <li className="subtitle has-text-centered">{foodItem.name}</li>
             <li>Details:</li>
             <li>- Energy: {foodItem.energy}kj per {foodItem.unit}</li>
