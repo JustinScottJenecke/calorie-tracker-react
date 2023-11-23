@@ -47,6 +47,7 @@ const DailyTracker = () => {
         setProtein(prev => prev + protein)
     }
 
+    
     /**
      * Updates the tracked energy and macro-nutrient values inside the state of page/component
      * @param {Object} foodItem FoodItemObject: {id, name, energy, unit, category, serving, macros}
@@ -60,6 +61,7 @@ const DailyTracker = () => {
         addFats(foodItem.macros.fats)
         addCarbs(foodItem.macros.carbohydrates)
     }
+
 
     /**
      * Adds a selected FoodItem to a list of tracked FoodItems and calculates the energy and 
