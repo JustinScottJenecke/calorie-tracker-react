@@ -3,11 +3,6 @@ import { useState } from "react"
 const FoodItem = (props) => {
 
     //====== Component State ======
-
-    /**
-     * State variable to dictate which template of component should be rendered 
-     * @param {("repository"|"tracked"|"management")} 
-     */
     const [useCase, setUseCase] = useState('repository') 
 
     //====== Business Logic and Variables ======
@@ -24,7 +19,6 @@ const FoodItem = (props) => {
     return (
         <div className="box">
             <ul>
-            <li>ID: {foodItem.id}</li>
             <li className="subtitle has-text-centered">{foodItem.name}</li>
             <li>Details:</li>
             <li>- Energy: {foodItem.energy}kj per {foodItem.unit}</li>

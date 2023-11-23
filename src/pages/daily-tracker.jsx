@@ -51,7 +51,7 @@ const DailyTracker = () => {
     /**
      * Updates the tracked energy and macro-nutrient values inside the state of page/component
      * @param {Object} foodItem FoodItemObject: {id, name, energy, unit, category, serving, macros}
-     * @returns {null}
+     * @returns {null} null
      */
     const updateTrackerDisplay = (foodItem) => {
 
@@ -77,47 +77,24 @@ const DailyTracker = () => {
 
         foodRepository.forEach(foodItem => {
             if (foodItem.id === selectedId) {
-                //selectedFood = foodItem
+                
+                selectedFood = foodItem
 
-                const {name, energy, unit, category, serving, macros} = foodItem
+                console.log(selectedFood)
 
-                selectedFood = {
-                    name: name,
-                    energy: energy,
-                    unit: unit,
-                    category: category,
-                    serving: serving,
-                    macros: macros
-                }
-            }
+                // helper functions
+                const calculatedFoodItem = calcEnergyAndMacrosByServing(selectedFood, selectedServing)
+                updateTrackerDisplay(calculatedFoodItem) 
+
+                // set Id and append selectedFood to array in state
+                calculatedFoodItem.id = trackedFoodItems.length
+                setFoodItems([...trackedFoodItems, calculatedFoodItem])
+
+                return true
+
+            } else 
+                return false
         });
-
-        if (selectedFood) {
-
-            // helper functions
-            calcEnergyAndMacrosByServing(selectedFood, selectedServing)
-            updateTrackerDisplay(selectedFood) 
-
-            // set Id and append selectedFood to array in state
-            selectedFood.id = trackedFoodItems.length
-            setFoodItems([...trackedFoodItems, selectedFood])
-
-            return true
-        } else 
-            return false
-    }
-
-    const mockFoodItem = {
-        name: "Sweet Potato",
-        energy: 360,
-        unit: "100-grams",
-        category: "starch",
-        serving: "30-grams",
-        macros: {
-            protein: 1.6,
-            fats: 0.2,
-            carbohydrates: 20
-        }
     }
 
     return (
