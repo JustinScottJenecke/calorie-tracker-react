@@ -6,7 +6,7 @@
 /**
  * 
  */
-export const createFoodFactory = (name, energy, weight, protein, fats, carbs) => {
+export const createFoodFactory = (id, name, energy, weight, protein, fats, carbs) => {
     return {
         // getName() {return name},
         // getEnergy() {return energy},
@@ -14,6 +14,7 @@ export const createFoodFactory = (name, energy, weight, protein, fats, carbs) =>
         // getProtein() {return protein},
         // getFats() {return fats},
         // getCarbs() {return carbs}
+        id: id,
         name: name,
         energy: energy,
         weight: weight,
@@ -48,36 +49,62 @@ export const createFoodFactory = (name, energy, weight, protein, fats, carbs) =>
  * modifies macros and energy of food based on serving size selected by user
  * @param {object} foodItem food item object selected by user
  * @param {number} servingInput serving size desired by user (in grams/litre/whole)
- * @return {object} returns a new food item with new energy and macro info based on the serving size selected by user
+ * @return {object} returns a new food item without an ID, but with new energy and macro info based on the serving size selected by user
  */
 export const calcEnergyAndMacrosByServing = (foodItem, servingInput) => {
 
-    // extract properties from food item
-    let {energy, unit, serving, macros} = foodItem
+    // console.log(foodItem)
+    console.log(servingInput)
 
-    // test to see if destructures correctly
-    // console.log(energy, unit, serving, macros)
+    // extract properties from food item
+    let {name, energy, unit, category, serving, macros} = foodItem
 
     if (servingInput) {
         
         // extract unit of measurement from foodItem's unit property
         const [servingSize, servingUnit] = unit.split("-")
 
-        // test to print out energy before conversion:
-        //console.log(`${unit} of ${foodItem.name} has: - ${energy} kj \n- Protein: ${macros.protein}g \n- Fats: ${macros.fats}g \n- Carbs: ${macros.carbohydrates}g`)
+        /*
+            foodItem.energy = helperEnergyMacroCalculation(energy, servingSize, servingInput)
+            foodItem.macros.protein = helperEnergyMacroCalculation(macros.protein, servingSize, servingInput)
+            foodItem.macros.fats = helperEnergyMacroCalculation(macros.fats, servingSize, servingInput)
+            foodItem.macros.carbohydrates = helperEnergyMacroCalculation(macros.carbohydrates, servingSize, servingInput)
 
-        // calc energy and macros based of user's serving input
-        foodItem.energy = helperEnergyMacroCalculation(energy, servingSize, servingInput)
-        foodItem.macros.protein = helperEnergyMacroCalculation(macros.protein, servingSize, servingInput)
-        foodItem.macros.fats = helperEnergyMacroCalculation(macros.fats, servingSize, servingInput)
-        foodItem.macros.carbohydrates = helperEnergyMacroCalculation(macros.carbohydrates, servingSize, servingInput)
+            foodItem.unit =  `${servingInput}-${servingUnit}`
+        */
 
-        // replace old serving size with new serving size
-        foodItem.unit =  `${servingInput}-${servingUnit}`
+        const createdFoodItem = {
+            name: name,
+            // calc energy and macros based of user's serving input
+            energy: helperEnergyMacroCalculation(energy, servingSize, servingInput),
+            // replace old serving size with new serving size
+            unit: `${servingInput}-${servingUnit}`,
+            category: category,
+            serving: serving,
+            macros: {
+                protein: helperEnergyMacroCalculation(macros.protein, servingSize, servingInput),
+                fats: helperEnergyMacroCalculation(macros.fats, servingSize, servingInput),
+                carbohydrates: helperEnergyMacroCalculation(macros.carbohydrates, servingSize, servingInput)
+            }, 
+        }
 
-        return foodItem
+        console.log(createdFoodItem)
+
+        return createdFoodItem
         
-    } else {
-        return foodItem
+    } 
+    else {
+        return {
+            name: name,
+            energy: energy,
+            unit: unit,
+            category: category,
+            serving: serving,
+            macros: {
+                protein: macros.protein,
+                fats: macros.fats,
+                carbohydrates: macros.carbohydrates
+            }, 
+        }
     }
 }
