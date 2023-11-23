@@ -1,15 +1,28 @@
 import { useState } from "react"
 
+/**
+ * Description - FoodItem universal component for displaying food items in app. 
+ * 
+ * Can be used in the following contexts:
+ *  - FoodRepositoryList
+ *  - TrackedFoodItems
+ * 
+ * @param {Object} props 
+ * @param {Object} props.foodItem - FoodItem object to be displayed. 
+ * @param {("repository"|"tracker"|"management")} props.useCase - Determines which context component is being used and affects how template is conditionally rendered
+* @param {Function} props.addBtnHandler - Function passed down from parent to add FoodItem to TrackedFoodItems
+ * @returns 
+ */
 const FoodItem = (props) => {
-
-    //====== Component State ======
-    const [useCase, setUseCase] = useState('repository') 
 
     //====== Business Logic and Variables ======
 
-    // extract serving unit from food item
+    const useCase = props.useCase
     const foodItem = props.foodItem
     const [servingSize, servingUnit] = foodItem.unit.split("-")
+
+    // templates
+    const addBtn = <button className="button is-success mt-2" onClick={() => { props.addBtnHandler(foodItem.id, servingSizeState) }}>Add</button>
 
     // hooks
     const [servingSizeState, setServingSizeState] = useState(servingSize)
@@ -33,7 +46,7 @@ const FoodItem = (props) => {
             <div className="mt-4">
                 <input type="number" value={servingSizeState} onChange={(e) => {setServingSizeState(e.target.value)}} /> {servingUnit}
                 <br />
-                <button className="button is-success mt-2" onClick={() => { props.addBtnHandler(foodItem.id, servingSizeState) }}>Add</button>
+                {useCase === 'repository' ? addBtn : ''}
             </div>
         </div>
     )
