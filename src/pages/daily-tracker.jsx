@@ -31,7 +31,7 @@ const DailyTracker = () => {
 
     // ========= Business Logic =========
 
-    // Macro Calculator
+    // State updators
     const addEnergy = (energy) => {
         setEnergy(prev => prev + energy)
     }
@@ -47,22 +47,30 @@ const DailyTracker = () => {
         setProtein(prev => prev + protein)
     }
 
-    // Food Item
-    const addFoodItem = (foodItem) => {
-
-        // sets id for new food item
-        foodItem.id = trackedFoodItems.length
+    
+    /**
+     * Updates the tracked energy and macro-nutrient values inside the state of page/component
+     * @param {Object} foodItem FoodItemObject: {id, name, energy, unit, category, serving, macros}
+     * @returns {null}
+     */
+    const updateTrackerDisplay = (foodItem) => {
 
         // adds macros and energy of food item
         addEnergy(foodItem.energy)
         addProtein(foodItem.macros.protein)
         addFats(foodItem.macros.fats)
         addCarbs(foodItem.macros.carbohydrates)
-
-        // appends food item to list
-        setFoodItems([...trackedFoodItems, foodItem])
     }
 
+
+    /**
+     * Adds a selected FoodItem to a list of tracked FoodItems and calculates the energy and 
+     * macro-nutrients of food selected by means of a calculation
+     * 
+     * @param {number} selectedId Id of FoodItem to be added to tracked food item list
+     * @param {number} selectedServing serving size selected by user to be used in calculation/helper function
+     * @returns {boolean} retruns true if adding is successful, false if add fails
+     */
     const trackFoodItem = (selectedId, selectedServing) => {
 
         let selectedFood;
@@ -86,8 +94,13 @@ const DailyTracker = () => {
 
         if (selectedFood) {
 
+            // helper functions
             calcEnergyAndMacrosByServing(selectedFood, selectedServing)
-            addFoodItem(selectedFood) 
+            updateTrackerDisplay(selectedFood) 
+
+            // set Id and append selectedFood to array in state
+            selectedFood.id = trackedFoodItems.length
+            setFoodItems([...trackedFoodItems, selectedFood])
 
             return true
         } else 
@@ -133,8 +146,8 @@ const DailyTracker = () => {
             </section>
             <hr />
             {/* <AddFoodModal /> */}
-            <button className="button" onClick={() => { addFoodFromRepo(1) }}>Add Food</button>
-            <button className="button" onClick={() => { addEnergy(500) }}>Add 100 kj</button>
+            {/* <button className="button" onClick={() => { addFoodFromRepo(1) }}>Add Food</button> */}
+            <button className="button" onClick={() => { addEnergy(100) }}>Add 100 kj</button>
             <button className="button" onClick={() => { addProtein(10) }}>Add 10 Protein</button>
             <button className="button" onClick={() => { addFats(10) }}>Add 10 Fats</button>
             <button className="button" onClick={() => { addCarbs(10) }}>Add 10 Carbs</button>

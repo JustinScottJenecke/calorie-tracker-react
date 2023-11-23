@@ -1,3 +1,5 @@
+import FoodItem from "../food-item"
+
 const TrackedFoodItemList = (props) => {
 
     const mockItems = [1, 2, 3, 4, 5]
@@ -11,9 +13,7 @@ const TrackedFoodItemList = (props) => {
                 {
                     trackedFoodItems.map(foodItem => {
                         return (
-                            <li key={foodItem.id}>
-                                {foodItem.id} - {foodItem.name}
-                            </li>
+                            <FoodItem key={foodItem.id} foodItem={foodItem}/>
                         )
                     })
                 }
