@@ -10,7 +10,7 @@ import { useState } from "react"
  * @param {Object} props 
  * @param {Object} props.foodItem - FoodItem object to be displayed. 
  * @param {("repository"|"tracker"|"management")} props.useCase - Determines which context component is being used and affects how template is conditionally rendered
-* @param {Function} props.addBtnHandler - Function passed down from parent to add FoodItem to TrackedFoodItems
+ * @param {Function} props.addBtnHandler - Function passed down from parent to add FoodItem to TrackedFoodItems
  * @returns 
  */
 const FoodItem = (props) => {
