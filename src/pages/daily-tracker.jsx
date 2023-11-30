@@ -21,7 +21,7 @@ const DailyTracker = () => {
     const [trackedFoodItems, setFoodItems] = useState([])
 
     // Modals
-    const [addFoodModalActive, SetAddFoodModalActive] = useState(false)
+    const [addFoodModalActive, setAddFoodModalActive] = useState(false)
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -31,7 +31,6 @@ const DailyTracker = () => {
             }
         })
             .then(response => response.json())
-            // .then(data => console.log(data))
             .then(data => setFoodRepository(data))
     }, [])
 
@@ -86,8 +85,6 @@ const DailyTracker = () => {
                 
                 selectedFood = foodItem
 
-                console.log(selectedFood)
-
                 // helper functions
                 const calculatedFoodItem = calcEnergyAndMacrosByServing(selectedFood, selectedServing)
                 updateTrackerDisplay(calculatedFoodItem) 
@@ -109,10 +106,10 @@ const DailyTracker = () => {
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">
-                <button className="button is-primary">Add Food Item</button>
+                <button className="button is-primary" onClick={ () => setAddFoodModalActive(true)}>Add Food Item</button>
             </div>
             <hr />
-            { addFoodModalActive && <AddFoodModal/>}
+            { addFoodModalActive && <AddFoodModal setAddFoodModalActive={setAddFoodModalActive} />}
             <section className="columns">
                 <aside className="column is-6">
                     <h3 className="subtitle">Food Item Repository:</h3>

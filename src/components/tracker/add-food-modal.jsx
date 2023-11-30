@@ -7,15 +7,18 @@ import styles from './add-food-modal.module.css'
  * personalized repository.
  * 
  * @param {object} props
- * @param {function} SetAddFoodModal - function from parent component which toggles component based on state
+ * @param {function} setAddFoodModalActive - function from parent component which toggles component based on state
  * 
  * @returns {JSX}
  */
-const AddFoodModal = () => {
+const AddFoodModal = (props) => {
 
     return (
         <div className={styles['popup-modal']}>
-            <button className={`button is-dark ${styles['cancel-btn']}`}>
+            <button 
+                className={`button is-dark ${styles['cancel-btn']}`}
+                onClick={ () => props.setAddFoodModalActive(false)}
+            >
                 X
             </button>
             <div action="" method="get" className="is-flex-direction-column">
