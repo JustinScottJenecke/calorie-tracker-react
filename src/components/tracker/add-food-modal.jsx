@@ -13,8 +13,6 @@ import styles from './add-food-modal.module.css'
  */
 const AddFoodModal = () => {
 
-
-
     return (
         <div className={styles['popup-modal']}>
             <button className={`button is-dark ${styles['cancel-btn']}`}>

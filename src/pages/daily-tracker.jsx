@@ -21,7 +21,7 @@ const DailyTracker = () => {
     const [trackedFoodItems, setFoodItems] = useState([])
 
     // Modals
-    const [addFoodModal, SetAddFoodModal] = useState(true)
+    const [addFoodModalActive, SetAddFoodModalActive] = useState(false)
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -112,7 +112,7 @@ const DailyTracker = () => {
                 <button className="button is-primary">Add Food Item</button>
             </div>
             <hr />
-            <AddFoodModal/>
+            { addFoodModalActive && <AddFoodModal/>}
             <section className="columns">
                 <aside className="column is-6">
                     <h3 className="subtitle">Food Item Repository:</h3>
