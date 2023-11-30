@@ -1,6 +1,19 @@
 import styles from './add-food-modal.module.css'
 
+/**
+ * Gives the user the option to select food items from Food repository or create a custom
+ * food item on the fly.
+ * Users have the option to persist any newly created food items to the repository on their 
+ * personalized repository.
+ * 
+ * @param {object} props
+ * @param {function} SetAddFoodModal - function from parent component which toggles component based on state
+ * 
+ * @returns {JSX}
+ */
 const AddFoodModal = () => {
+
+
 
     return (
         <div className={styles['popup-modal']}>
