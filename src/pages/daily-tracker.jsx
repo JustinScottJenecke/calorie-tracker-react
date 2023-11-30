@@ -4,17 +4,24 @@ import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 import { useState, useEffect } from "react";
 import FoodItem from "../components/food-item";
+import AddFoodModal from "../components/tracker/add-food-modal";
 
 const DailyTracker = () => {
 
     // ========= State Variables ========
+
+    // Tracker State
     const [dailyEnergy, setEnergy] = useState(0)
     const [dailyProtein, setProtein] = useState(0)
     const [dailyFats, setFats] = useState(0)
     const [dailyCarbs, setCarbs] = useState(0)
 
+    // Food Repostory and Tracked Items State
     const [foodRepository, setFoodRepository] = useState([])
     const [trackedFoodItems, setFoodItems] = useState([])
+
+    // Modals
+    const [addFoodModal, SetAddFoodModal] = useState(true)
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -101,6 +108,11 @@ const DailyTracker = () => {
             <h2 className="title">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
+            <div className="has-text-centered">
+                <button className="button is-primary">Add Food Item</button>
+            </div>
+            <hr />
+            <AddFoodModal/>
             <section className="columns">
                 <aside className="column is-6">
                     <h3 className="subtitle">Food Item Repository:</h3>
