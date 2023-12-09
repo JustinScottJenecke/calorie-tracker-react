@@ -1,4 +1,4 @@
-const AllFoodItems = () => {
+const FoodItemManifest = () => {
 
     return (
         <div>
@@ -7,4 +7,4 @@ const AllFoodItems = () => {
     )
 }
 
-export default AllFoodItems 
+export default FoodItemManifest 

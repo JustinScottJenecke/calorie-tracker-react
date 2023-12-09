@@ -1,3 +1,8 @@
+import { useState } from 'react'
+
+import FoodItemManifest from '../food-item-management/food-item-manifest'
+import CreateNewFoodModal from '../food-item/create-new-food-modal'
+
 import styles from './add-food-modal.module.css'
 
 /**
@@ -12,6 +17,9 @@ import styles from './add-food-modal.module.css'
  * @returns {JSX}
  */
 const AddFoodModal = (props) => {
+
+    const [createNewFoodActive, setCreateNewFoodActive] = useState(false)
+    const [foodItemManifestActive, setFoodItemManifestActive] = useState(false)
 
     return (
         <div className={styles['popup-modal']}>
@@ -33,6 +41,8 @@ const AddFoodModal = (props) => {
                     </button>
                 </div>
             </div>
+            {createNewFoodActive && <CreateNewFoodModal />}
+            {foodItemManifestActive && <FoodItemManifest />}
         </div>
     )
 }
