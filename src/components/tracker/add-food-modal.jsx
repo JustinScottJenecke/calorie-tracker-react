@@ -18,11 +18,11 @@ import styles from './add-food-modal.module.css'
  */
 const AddFoodModal = (props) => {
 
-    const [createNewFoodActive, setCreateNewFoodActive] = useState(false)
+    const [createNewFoodActive, setCreateNewFoodActive] = useState(true)
     const [foodItemManifestActive, setFoodItemManifestActive] = useState(false)
 
     return (
-        <div className={styles['popup-modal']}>
+        <div className={` ${styles['popup-modal']} is-flex-direction-column `}>
             <button 
                 className={`button is-dark ${styles['cancel-btn']}`}
                 onClick={ () => props.setAddFoodModalActive(false)}
@@ -31,7 +31,8 @@ const AddFoodModal = (props) => {
             </button>
             <div action="" method="get" className="is-flex-direction-column">
                 <div className="columns">
-                    <button className={`button is-primary column ${styles['afm-button-option']}`}>
+                    <button 
+                        className={`button is-primary column ${styles['afm-button-option']}`}>
                         Select Food Item from manifest
                     </button>
                 </div>
@@ -41,8 +42,8 @@ const AddFoodModal = (props) => {
                     </button>
                 </div>
             </div>
-            {createNewFoodActive && <CreateNewFoodModal />}
-            {foodItemManifestActive && <FoodItemManifest />}
+            {createNewFoodActive && <CreateNewFoodModal className={styles['popup-modal']}/>}
+            {foodItemManifestActive && <FoodItemManifest className={styles['popup-modal']}/>}
         </div>
     )
 }
