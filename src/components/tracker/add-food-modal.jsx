@@ -22,7 +22,7 @@ const AddFoodModal = (props) => {
     const [foodItemManifestActive, setFoodItemManifestActive] = useState(false)
 
     return (
-        <div className={` ${styles['popup-modal']} is-flex-direction-column `}>
+        <div className={`popup-modal is-flex-direction-column `}>
             <button 
                 className={`button is-dark ${styles['cancel-btn']}`}
                 onClick={ () => props.setAddFoodModalActive(false)}
