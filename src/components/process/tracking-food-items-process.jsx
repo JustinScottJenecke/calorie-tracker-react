@@ -1,3 +1,6 @@
+import FoodItemManifest from "../food-item-management/food-item-manifest"
+import CreateNewFoodModal from "../food-item/create-new-food-modal"
+import AddFoodModal from "../tracker/add-food-modal"
 
 /**
  * Process component serves as a controller for component cycling when a user is
@@ -8,8 +11,11 @@
 const TrackingFoodItemsProcess = () => {
 
     return (
-        <section>
+        <section className={`popup-modal is-flex-direction-column `}>
             processes go here
+            <AddFoodModal />
+            <CreateNewFoodModal />
+            <FoodItemManifest />
         </section>
     )
 }

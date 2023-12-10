@@ -18,15 +18,9 @@ import styles from './add-food-modal.module.css'
  */
 const AddFoodModal = (props) => {
 
-    const [createNewFoodActive, setCreateNewFoodActive] = useState(true)
-    const [foodItemManifestActive, setFoodItemManifestActive] = useState(false)
-
     return (
-        <div className={`popup-modal is-flex-direction-column `}>
-            <button 
-                className={`button is-dark ${styles['cancel-btn']}`}
-                onClick={ () => props.setAddFoodModalActive(false)}
-            >
+        <div>
+            <button className={`button is-dark ${styles['cancel-btn']}`}>
                 X
             </button>
             <div action="" method="get" className="is-flex-direction-column">
@@ -42,8 +36,6 @@ const AddFoodModal = (props) => {
                     </button>
                 </div>
             </div>
-            {createNewFoodActive && <CreateNewFoodModal className={styles['popup-modal']}/>}
-            {foodItemManifestActive && <FoodItemManifest className={styles['popup-modal']}/>}
         </div>
     )
 }

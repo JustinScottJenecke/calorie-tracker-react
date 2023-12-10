@@ -16,24 +16,24 @@ const CreateNewFoodModal = () => {
                 {/* <input className={`field input`} type="text" placeholder="Kj of serving" /> */}
 
                 {/* Always applicable */}
-                <div class="field is-grouped">
-                    <div class="control">
+                <div className="field is-grouped">
+                    <div className="control">
                         <input className={`input`} type="name" placeholder="Protein" />
                     </div>
-                    <div class="control">
+                    <div className="control">
                         <input className={`input`} type="name" placeholder="Fats" />
                     </div>
-                    <div class="control">
+                    <div className="control">
                         <input className={`input`} type="name" placeholder="Carbs" />
                     </div>
                 </div>
 
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-success">Submit</button>
+                <div className="field is-grouped">
+                    <div className="control">
+                        <button className="button is-success">Submit</button>
                     </div>
-                    <div class="control">
-                        <button class="button is-link is-danger">Cancel</button>
+                    <div className="control">
+                        <button className="button is-link is-danger">Cancel</button>
                     </div>
                 </div>
             </form>
