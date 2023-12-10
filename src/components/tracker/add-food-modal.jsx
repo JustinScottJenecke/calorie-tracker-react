@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-import FoodItemManifest from '../food-item-management/food-item-manifest'
-import CreateNewFoodModal from '../food-item/create-new-food-modal'
-
 import styles from './add-food-modal.module.css'
 
 /**
@@ -11,8 +8,10 @@ import styles from './add-food-modal.module.css'
  * Users have the option to persist any newly created food items to the repository on their 
  * personalized repository.
  * 
+ * @param {function} setAddFodModalOptions - function from parent component changes the state of this component to show and hide this component
+ * @param {function} setCreateNewFoodModal - modifies state of process component by hiding or showing CreateNewModal component
+ * @param {function} setCreateNewFoodModal - modifies state of process component by hiding or showing CreateNewModal component
  * @param {object} props
- * @param {function} setAddFoodModalActive - function from parent component which toggles component based on state
  * 
  * @returns {JSX}
  */
@@ -26,7 +25,12 @@ const AddFoodModal = (props) => {
             <div action="" method="get" className="is-flex-direction-column">
                 <div className="columns">
                     <button 
-                        className={`button is-primary column ${styles['afm-button-option']}`}>
+                        className={`button is-primary column ${styles['afm-button-option']}`}
+                        onClick={ () => {
+                            props.setAddFodModalOptions(false)
+                            props.setCreateNewFoodModal(true)
+                        }}
+                    >
                         Select Food Item from manifest
                     </button>
                 </div>

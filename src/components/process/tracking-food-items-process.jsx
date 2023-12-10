@@ -12,15 +12,31 @@ import AddFoodModal from "../tracker/add-food-modal"
 const TrackingFoodItemsProcess = () => {
 
     // component cycling state
-    const [showAddFoodModal, setAddFodModal] = useState(true)
+    const [showAddFoodModalOptions, setAddFodModalOptions] = useState(true)
     const [showCreateNewFoodModal, setCreateNewFoodModal] = useState(false)
     const [showFoodItemManifestModal, setFoodItemManifestModal] = useState(false)
 
+
     return (
         <section className={`popup-modal is-flex-direction-column`}>
-            { showAddFoodModal && <AddFoodModal />}
-            { showCreateNewFoodModal && <CreateNewFoodModal />}
-            { showFoodItemManifestModal && <FoodItemManifest />}
+            { 
+                showAddFoodModalOptions 
+                && 
+                <AddFoodModal 
+                    setAddFodModalOptions={setAddFodModalOptions}
+                    setCreateNewFoodModal={setCreateNewFoodModal}
+                />
+            }
+            { 
+                showCreateNewFoodModal 
+                && 
+                <CreateNewFoodModal/>
+            }
+            { 
+                showFoodItemManifestModal 
+                && 
+                <FoodItemManifest />
+            }
         </section>
     )
 }
