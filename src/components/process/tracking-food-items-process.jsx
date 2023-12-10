@@ -1,3 +1,4 @@
+import { useState } from "react"
 import FoodItemManifest from "../food-item-management/food-item-manifest"
 import CreateNewFoodModal from "../food-item/create-new-food-modal"
 import AddFoodModal from "../tracker/add-food-modal"
@@ -10,12 +11,16 @@ import AddFoodModal from "../tracker/add-food-modal"
  */
 const TrackingFoodItemsProcess = () => {
 
+    // component cycling state
+    const [showAddFoodModal, setAddFodModal] = useState(true)
+    const [showCreateNewFoodModal, setCreateNewFoodModal] = useState(false)
+    const [showFoodItemManifestModal, setFoodItemManifestModal] = useState(false)
+
     return (
-        <section className={`popup-modal is-flex-direction-column `}>
-            processes go here
-            <AddFoodModal />
-            <CreateNewFoodModal />
-            <FoodItemManifest />
+        <section className={`popup-modal is-flex-direction-column`}>
+            { showAddFoodModal && <AddFoodModal />}
+            { showCreateNewFoodModal && <CreateNewFoodModal />}
+            { showFoodItemManifestModal && <FoodItemManifest />}
         </section>
     )
 }
