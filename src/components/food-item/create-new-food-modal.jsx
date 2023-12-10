@@ -1,4 +1,4 @@
-const CreateNewFoodModal = () => {
+const CreateNewFoodModal = (props) => {
 
     return (
         <section>
@@ -33,7 +33,16 @@ const CreateNewFoodModal = () => {
                         <button className="button is-success">Submit</button>
                     </div>
                     <div className="control">
-                        <button className="button is-link is-danger">Cancel</button>
+                        <button 
+                            className="button is-link is-danger"
+                            onClick={ (e) => {
+                                e.preventDefault()
+                                props.setCreateNewFoodModal(false)
+                                props.setAddFodModalOptions(true)
+                            }}
+                        >
+                            Cancel
+                        </button>
                     </div>
                 </div>
             </form>

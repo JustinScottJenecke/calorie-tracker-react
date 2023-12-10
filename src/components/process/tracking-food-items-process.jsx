@@ -30,7 +30,10 @@ const TrackingFoodItemsProcess = () => {
             { 
                 showCreateNewFoodModal 
                 && 
-                <CreateNewFoodModal/>
+                <CreateNewFoodModal
+                    setAddFodModalOptions={setAddFodModalOptions}
+                    setCreateNewFoodModal={setCreateNewFoodModal}
+                />
             }
             { 
                 showFoodItemManifestModal 
