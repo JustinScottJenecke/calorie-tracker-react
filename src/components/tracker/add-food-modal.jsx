@@ -31,12 +31,12 @@ const AddFoodModal = (props) => {
                             props.setCreateNewFoodModal(true)
                         }}
                     >
-                        Select Food Item from manifest
+                        Enter new custom food item
                     </button>
                 </div>
                 <div className="columns">
                     <button className={`button is-primary column ${styles['afm-button-option']}`}>
-                        Enter new custom Food Item
+                        Select food item from manifest
                     </button>
                 </div>
             </div>
