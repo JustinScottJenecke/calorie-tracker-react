@@ -25,6 +25,7 @@ const TrackingFoodItemsProcess = (props) => {
                 <AddFoodModal 
                     setAddFodModalOptions={setAddFodModalOptions}
                     setCreateNewFoodModal={setCreateNewFoodModal}
+                    setFoodItemManifestModal={setFoodItemManifestModal}
                 />
             }
             { 

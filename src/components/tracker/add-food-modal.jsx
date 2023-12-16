@@ -10,7 +10,7 @@ import styles from './add-food-modal.module.css'
  * 
  * @param {function} setAddFodModalOptions - function from parent component changes the state of this component to show and hide this component
  * @param {function} setCreateNewFoodModal - modifies state of process component by hiding or showing CreateNewModal component
- * @param {function} setCreateNewFoodModal - modifies state of process component by hiding or showing CreateNewModal component
+ * @param {function} setFoodItemManifestModal - modifies state of process component by hiding or showing CreateNewModal component
  * @param {object} props
  * 
  * @returns {JSX}
@@ -39,7 +39,7 @@ const AddFoodModal = (props) => {
                         className={`button is-primary column ${styles['afm-button-option']}`}
                         onClick={ () => {
                             props.setAddFodModalOptions(false)
-                            props.setFoodItemManifest(true)
+                            props.setFoodItemManifestModal(true)
                         }}
                     >
                         Select food item from manifest
