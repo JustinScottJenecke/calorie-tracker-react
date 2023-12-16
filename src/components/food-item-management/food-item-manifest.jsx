@@ -10,7 +10,7 @@ import FoodItem from "../food-item/"
 const FoodItemManifest = (props) => {
 
     // const foodRepository = props.foodRepository
-    console.log(foodRepository)
+    console.log(props.foodRepository)
 
     return (
         <section>
