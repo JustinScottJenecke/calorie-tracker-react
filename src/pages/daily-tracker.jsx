@@ -1,10 +1,11 @@
 import TrackerDisplay from "../components/tracker/tracker-display";
 import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
+import FoodItem from "../components/food-item";
+import TrackingFoodItemsProcess from "../components/process/tracking-food-items-process";
+
 
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 import { useState, useEffect } from "react";
-import FoodItem from "../components/food-item";
-import AddFoodModal from "../components/tracker/add-food-modal";
 
 const DailyTracker = () => {
 
@@ -20,8 +21,8 @@ const DailyTracker = () => {
     const [foodRepository, setFoodRepository] = useState([])
     const [trackedFoodItems, setFoodItems] = useState([])
 
-    // Modals
-    const [addFoodModalActive, setAddFoodModalActive] = useState(false)
+    // Processes
+    const [trackingFoodItemsProcess, setTrackingFoodItemsProcess] = useState(false)
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -100,16 +101,25 @@ const DailyTracker = () => {
         });
     }
 
+    // =================================== Template ====================================
+
     return (
         <main>
             <h2 className="title">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">
-                <button className="button is-primary" onClick={ () => setAddFoodModalActive(true)}>Add Food Item</button>
+                <button className="button is-primary" onClick={ () => setTrackingFoodItemsProcess(true)}>Add Food Item</button>
             </div>
             <hr />
-            { addFoodModalActive && <AddFoodModal setAddFoodModalActive={setAddFoodModalActive} />}
+            { 
+                trackingFoodItemsProcess 
+                 && 
+                <TrackingFoodItemsProcess 
+                    setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} 
+                    foodRepository={foodRepository}
+                />
+            }
             <section className="columns">
                 <aside className="column is-6">
                     <h3 className="subtitle">Food Item Repository:</h3>
