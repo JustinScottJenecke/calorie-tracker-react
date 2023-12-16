@@ -104,6 +104,8 @@ const DailyTracker = () => {
         });
     }
 
+    // =================================== Template ====================================
+
     return (
         <main>
             <h2 className="title">Daily View</h2>
@@ -113,7 +115,14 @@ const DailyTracker = () => {
                 <button className="button is-primary" onClick={ () => setTrackingFoodItemsProcess(true)}>Add Food Item</button>
             </div>
             <hr />
-            { trackingFoodItemsProcess && <TrackingFoodItemsProcess setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} />}
+            { 
+                trackingFoodItemsProcess 
+                 && 
+                <TrackingFoodItemsProcess 
+                    setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} 
+                    foodRepository={foodRepository}
+                />
+            }
             <section className="columns">
                 <aside className="column is-6">
                     <h3 className="subtitle">Food Item Repository:</h3>
