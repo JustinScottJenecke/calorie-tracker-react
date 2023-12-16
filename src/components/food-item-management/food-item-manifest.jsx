@@ -9,19 +9,20 @@ import FoodItem from "../food-item/"
  */
 const FoodItemManifest = (props) => {
 
-    const foodRepository = props.foodRepository
+    // const foodRepository = props.foodRepository
+    console.log(foodRepository)
 
     return (
         <section>
             <h3 className="subtitle">Food Item Repository:</h3>
             {
-                foodRepository.map(foodItem => {
+                props.foodRepository.map(foodItem => {
                     return (
                         <FoodItem
                             key={foodItem.id}
                             useCase="repository"
                             foodItem={foodItem}
-                            addBtnHandler={trackFoodItem}
+                            // addBtnHandler={trackFoodItem}
                         />
                     )
                 })

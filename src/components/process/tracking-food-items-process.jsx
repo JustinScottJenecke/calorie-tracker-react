@@ -7,15 +7,15 @@ import AddFoodModal from "../tracker/add-food-modal"
  * Process component serves as a controller for component cycling when a user is
  * attempting to add a food item to the list of tracked food items. Is able to track state
  * of which component needs to be displayed/
+ * 
  * @returns {JSX}
  */
-const TrackingFoodItemsProcess = () => {
+const TrackingFoodItemsProcess = (props) => {
 
     // component cycling state
     const [showAddFoodModalOptions, setAddFodModalOptions] = useState(true)
     const [showCreateNewFoodModal, setCreateNewFoodModal] = useState(false)
     const [showFoodItemManifestModal, setFoodItemManifestModal] = useState(false)
-
 
     return (
         <section className={`popup-modal is-flex-direction-column`}>
@@ -38,7 +38,7 @@ const TrackingFoodItemsProcess = () => {
             { 
                 showFoodItemManifestModal 
                 && 
-                <FoodItemManifest />
+                <FoodItemManifest foodRepository={props.foodRepository}/>
             }
         </section>
     )

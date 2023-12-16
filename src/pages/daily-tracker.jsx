@@ -24,9 +24,6 @@ const DailyTracker = () => {
     // Processes
     const [trackingFoodItemsProcess, setTrackingFoodItemsProcess] = useState(false)
 
-    // @deprecated
-    const [addFoodModalActive, setAddFoodModalActive] = useState(false)
-
     useEffect(() => {
         fetch('src/data/food-items.json', {
             headers: {
