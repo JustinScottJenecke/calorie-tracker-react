@@ -35,7 +35,13 @@ const AddFoodModal = (props) => {
                     </button>
                 </div>
                 <div className="columns">
-                    <button className={`button is-primary column ${styles['afm-button-option']}`}>
+                    <button 
+                        className={`button is-primary column ${styles['afm-button-option']}`}
+                        onClick={ () => {
+                            props.setAddFodModalOptions(false)
+                            props.setFoodItemManifest(true)
+                        }}
+                    >
                         Select food item from manifest
                     </button>
                 </div>
