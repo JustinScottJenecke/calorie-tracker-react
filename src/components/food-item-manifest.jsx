@@ -1,4 +1,4 @@
-import FoodItem from "../food-item/"
+import FoodItem from "./food-item/"
 
 /**
  * Component to display the unmodified/untracked food items stored inside of the applications

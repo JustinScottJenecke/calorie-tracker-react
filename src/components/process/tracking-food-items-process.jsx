@@ -1,7 +1,7 @@
 import { useState } from "react"
-import FoodItemManifest from "../food-item-management/food-item-manifest"
-import CreateNewFoodModal from "../food-item/create-new-food-modal"
-import AddFoodModal from "../tracker/add-food-modal"
+import FoodItemManifest from "../food-item-manifest"
+import CreateNewFoodModal from "../create-new-food-modal"
+import AddFoodModalOptions from "../add-food-modal-options"
 
 /**
  * Process component serves as a controller for component cycling when a user is
@@ -22,7 +22,7 @@ const TrackingFoodItemsProcess = (props) => {
             { 
                 showAddFoodModalOptions 
                 && 
-                <AddFoodModal 
+                <AddFoodModalOptions 
                     setAddFodModalOptions={setAddFodModalOptions}
                     setCreateNewFoodModal={setCreateNewFoodModal}
                     setFoodItemManifestModal={setFoodItemManifestModal}
