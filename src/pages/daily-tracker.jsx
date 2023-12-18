@@ -1,8 +1,7 @@
-import TrackerDisplay from "../components/tracker/tracker-display";
-import TrackedFoodItemList from "../components/tracker/tracked-food-item-list";
+import TrackerDisplay from "../components/daily-tracker/tracker-display";
+import TrackedFoodItemList from "../components/daily-tracker/tracked-food-item-list";
 import FoodItem from "../components/food-item";
 import TrackingFoodItemsProcess from "../components/process/tracking-food-items-process";
-
 
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 import { useState, useEffect } from "react";
