@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import styles from './add-food-modal.module.css'
+import styles from './css/add-food-modal-options.module.css'
 
 /**
  * Gives the user the option to select food items from Food repository or create a custom
