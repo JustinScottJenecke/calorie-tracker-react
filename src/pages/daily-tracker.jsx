@@ -2,13 +2,18 @@ import TrackerDisplay from "../components/daily-tracker/tracker-display";
 import TrackedFoodItemList from "../components/daily-tracker/tracked-food-item-list";
 import FoodItem from "../components/food-item";
 import TrackingFoodItemsProcess from "../components/process/tracking-food-items-process";
+import styles from "./css/daily-tracker.module.css"
 
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 import { useState, useEffect } from "react";
+import { useRef } from "react";
 
 const DailyTracker = () => {
 
     // ========= State Variables ========
+
+    // styling
+    const [pageClass, setPageClass] = useState("frozen-page")
 
     // Tracker State
     const [dailyEnergy, setEnergy] = useState(0)
@@ -22,6 +27,9 @@ const DailyTracker = () => {
 
     // Processes
     const [trackingFoodItemsProcess, setTrackingFoodItemsProcess] = useState(false)
+    const trackingFoodItemsRef = useRef(false)
+
+    // body.style="overflow:hidden; height:100vh;"
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
@@ -103,7 +111,7 @@ const DailyTracker = () => {
     // =================================== Template ====================================
 
     return (
-        <main>
+        <main className={pageClass}>
             <h2 className="title">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
@@ -117,6 +125,7 @@ const DailyTracker = () => {
                 <TrackingFoodItemsProcess 
                     setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} 
                     foodRepository={foodRepository}
+                    trackingFoodItemsRef={trackingFoodItemsRef}
                 />
             }
             <section className="columns">
