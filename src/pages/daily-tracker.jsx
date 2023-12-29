@@ -122,7 +122,6 @@ const DailyTracker = () => {
                 <TrackingFoodItemsProcess 
                     setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} 
                     foodRepository={foodRepository}
-                    trackingFoodItemsRef={trackingFoodItemsRef}
                 />
             }
             <section className="columns">

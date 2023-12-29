@@ -17,9 +17,6 @@ const TrackingFoodItemsProcess = (props) => {
     const [showCreateNewFoodModal, setCreateNewFoodModal] = useState(false)
     const [showFoodItemManifestModal, setFoodItemManifestModal] = useState(false)
 
-    // start process in ref
-    props.trackingFoodItemsRef.current=true
-
     return (
         <section className={`popup-modal is-flex-direction-column`}>
             { 
