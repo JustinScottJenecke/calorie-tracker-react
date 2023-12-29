@@ -27,9 +27,6 @@ const DailyTracker = () => {
 
     // Processes
     const [trackingFoodItemsProcess, setTrackingFoodItemsProcess] = useState(false)
-    const trackingFoodItemsRef = useRef(false)
-
-    // body.style="overflow:hidden; height:100vh;"
 
     useEffect(() => {
         fetch('src/data/food-items.json', {
