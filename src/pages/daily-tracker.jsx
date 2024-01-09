@@ -13,7 +13,7 @@ const DailyTracker = () => {
     // ========= State Variables ========
 
     // styling
-    const [pageClass, setPageClass] = useState("scrollable-page")
+    const [processActive, setProcessActive] = useState(false)
 
     // Tracker State
     const [dailyEnergy, setEnergy] = useState(0)
@@ -108,7 +108,7 @@ const DailyTracker = () => {
     // =================================== Template ====================================
 
     return (
-        <main className={pageClass}>
+        <main className={processActive ? 'frozen-page' : 'scrollable-page'}>
             <h2 className="title">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
@@ -117,7 +117,7 @@ const DailyTracker = () => {
                     className="button is-primary" 
                     onClick={ () => { 
                         setTrackingFoodItemsProcess(true) 
-                        setPageClass('frozen-page')}
+                        setProcessActive(!processActive)}
                     }
                 >
                     Add Food Item
