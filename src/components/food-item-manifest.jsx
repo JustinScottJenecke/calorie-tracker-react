@@ -15,6 +15,7 @@ const FoodItemManifest = (props) => {
     return (
         <section>
             <h3 className="subtitle">Food Item Repository:</h3>
+
             {
                 props.foodRepository.map(foodItem => {
                     return (
@@ -22,11 +23,21 @@ const FoodItemManifest = (props) => {
                             key={foodItem.id}
                             useCase="repository"
                             foodItem={foodItem}
-                            // addBtnHandler={trackFoodItem}
+                        // addBtnHandler={trackFoodItem}
                         />
                     )
                 })
             }
+
+            <button 
+                className="button" 
+                onClick={() => {
+                    props.setFoodItemManifestModal(false)
+                    props.setAddFodModalOptions(true)
+                }}
+            >
+                Cancel
+            </button>
         </section>
     )
 }
