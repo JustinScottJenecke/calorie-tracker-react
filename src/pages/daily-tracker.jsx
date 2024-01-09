@@ -13,7 +13,7 @@ const DailyTracker = () => {
     // ========= State Variables ========
 
     // styling
-    const [pageClass, setPageClass] = useState("frozen-page")
+    const [pageClass, setPageClass] = useState("scrollable-page")
 
     // Tracker State
     const [dailyEnergy, setEnergy] = useState(0)
@@ -113,7 +113,15 @@ const DailyTracker = () => {
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">
-                <button className="button is-primary" onClick={ () => setTrackingFoodItemsProcess(true)}>Add Food Item</button>
+                <button 
+                    className="button is-primary" 
+                    onClick={ () => { 
+                        setTrackingFoodItemsProcess(true) 
+                        setPageClass('frozen-page')}
+                    }
+                >
+                    Add Food Item
+                </button>
             </div>
             <hr />
             { 
