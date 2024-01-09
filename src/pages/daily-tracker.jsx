@@ -2,13 +2,18 @@ import TrackerDisplay from "../components/daily-tracker/tracker-display";
 import TrackedFoodItemList from "../components/daily-tracker/tracked-food-item-list";
 import FoodItem from "../components/food-item";
 import TrackingFoodItemsProcess from "../components/process/tracking-food-items-process";
+import styles from "./css/daily-tracker.module.css"
 
 import { calcEnergyAndMacrosByServing } from "../functions/daily-tracker";
 import { useState, useEffect } from "react";
+import { useRef } from "react";
 
 const DailyTracker = () => {
 
     // ========= State Variables ========
+
+    // styling
+    const [processActive, setProcessActive] = useState(false)
 
     // Tracker State
     const [dailyEnergy, setEnergy] = useState(0)
@@ -103,12 +108,20 @@ const DailyTracker = () => {
     // =================================== Template ====================================
 
     return (
-        <main>
+        <main className={processActive ? 'frozen-page' : 'scrollable-page'}>
             <h2 className="title">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">
-                <button className="button is-primary" onClick={ () => setTrackingFoodItemsProcess(true)}>Add Food Item</button>
+                <button 
+                    className="button is-primary" 
+                    onClick={ () => { 
+                        setTrackingFoodItemsProcess(true) 
+                        setProcessActive(!processActive)}
+                    }
+                >
+                    Add Food Item
+                </button>
             </div>
             <hr />
             { 
