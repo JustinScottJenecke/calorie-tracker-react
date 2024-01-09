@@ -6,7 +6,7 @@ import FoodItem from "./food-item/"
  * the daily tracker view
  * 
  * @param {object} props
- * @param {Array} props.foodRepository Contains a list of all FoodItems to be displayed so that users may select the FoodItems they wish to add to the tracker
+ * @param {Array <object>} props.foodRepository Contains a list of all FoodItems to be displayed so that users may select the FoodItems they wish to add to the tracker
  * @param {function} props.setFoodItemManifestModal callback to change state and unmount this component
  * @param {function} props.setAddFodModalOptions callback to change state and remount AddFoodModalOptions
  * @returns {JSX}
