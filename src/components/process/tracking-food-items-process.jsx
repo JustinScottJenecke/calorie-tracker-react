@@ -17,6 +17,12 @@ const TrackingFoodItemsProcess = (props) => {
     const [showCreateNewFoodModal, setCreateNewFoodModal] = useState(false)
     const [showFoodItemManifestModal, setFoodItemManifestModal] = useState(false)
 
+    // CreateNewFood
+
+
+    // Food Repository
+
+
     return (
         <section className={`popup-modal is-flex-direction-column`}>
             { 
@@ -39,7 +45,11 @@ const TrackingFoodItemsProcess = (props) => {
             { 
                 showFoodItemManifestModal 
                 && 
-                <FoodItemManifest foodRepository={props.foodRepository}/>
+                <FoodItemManifest 
+                    foodRepository={props.foodRepository}
+                    setAddFodModalOptions={setAddFodModalOptions}
+                    setFoodItemManifestModal={setFoodItemManifestModal}
+                />
             }
         </section>
     )
