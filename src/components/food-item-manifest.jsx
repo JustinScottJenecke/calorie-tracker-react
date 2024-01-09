@@ -4,7 +4,11 @@ import FoodItem from "./food-item/"
  * Component to display the unmodified/untracked food items stored inside of the applications
  * main datastore. Displays a list of FoodItem components with more details than what is displayed 
  * the daily tracker view
- * @param {object} props 
+ * 
+ * @param {object} props
+ * @param {Array} props.foodRepository Contains a list of all FoodItems to be displayed so that users may select the FoodItems they wish to add to the tracker
+ * @param {function} props.setFoodItemManifestModal callback to change state and unmount this component
+ * @param {function} props.setAddFodModalOptions callback to change state and remount AddFoodModalOptions
  * @returns {JSX}
  */
 const FoodItemManifest = (props) => {
@@ -30,7 +34,7 @@ const FoodItemManifest = (props) => {
             }
 
             <button 
-                className="button" 
+                className="button is-danger" 
                 onClick={() => {
                     props.setFoodItemManifestModal(false)
                     props.setAddFodModalOptions(true)
