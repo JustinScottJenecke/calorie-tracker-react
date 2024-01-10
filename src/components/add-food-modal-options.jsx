@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import styles from './css/add-food-modal-options.module.css'
+import utilStyles from './css/ui/cancel-btn.module.css'
 
 /**
  * Gives the user the option to select food items from Food repository or create a custom
@@ -18,9 +19,9 @@ import styles from './css/add-food-modal-options.module.css'
 const AddFoodModal = (props) => {
 
     return (
-        <div>
-            <button className={`button is-dark ${styles['cancel-btn']}`}>
-                X
+        <section>
+            <button className={`button is-dark ${utilStyles['modal-cancel-btn']}`}>
+                Xi
             </button>
             <div action="" method="get" className="is-flex-direction-column">
                 <div className="columns">
@@ -46,7 +47,7 @@ const AddFoodModal = (props) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
