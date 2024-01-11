@@ -19,29 +19,34 @@ const FoodItemManifest = (props) => {
     return (
         <section>
             <h3 className="subtitle">Food Item Repository:</h3>
-
+            <ul className={`columns is-multiline p-5`}>
             {
                 props.foodRepository.map(foodItem => {
                     return (
-                        <FoodItem
-                            key={foodItem.id}
-                            useCase="repository"
-                            foodItem={foodItem}
-                        // addBtnHandler={trackFoodItem}
-                        />
+                        <li className="column is-6">
+                            <FoodItem
+                                key={foodItem.id}
+                                useCase="repository"
+                                foodItem={foodItem}
+                            // addBtnHandler={trackFoodItem}
+                            />
+                        </li>
                     )
                 })
             }
+            </ul>
+            <div>
+                <button 
+                    className="button is-danger" 
+                    onClick={() => {
+                        props.setFoodItemManifestModal(false)
+                        props.setAddFodModalOptions(true)
+                    }}
+                >
+                    Cancel
+                </button>
+            </div>
 
-            <button 
-                className="button is-danger" 
-                onClick={() => {
-                    props.setFoodItemManifestModal(false)
-                    props.setAddFodModalOptions(true)
-                }}
-            >
-                Cancel
-            </button>
         </section>
     )
 }
