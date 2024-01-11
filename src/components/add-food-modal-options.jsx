@@ -20,9 +20,6 @@ const AddFoodModal = (props) => {
 
     return (
         <section>
-            <button className={`button is-dark ${utilStyles['modal-cancel-btn']}`}>
-                Xi
-            </button>
             <div action="" method="get" className="is-flex-direction-column">
                 <div className="columns">
                     <button 
