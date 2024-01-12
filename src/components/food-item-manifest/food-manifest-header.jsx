@@ -1,9 +1,13 @@
+import styles from '../css/food-item-manifest.module.css'
+
 const FoodManifestHeader = () => {
     return(
-        <>
-            hi
-        </>
+        <header className={`${styles['header']}`}>
+            <input type="text" placeholder="sort" />
+            <input type="text" placeholder="filter" />
+            <button className="button is-danger">Cancel</button>
+        </header>
     )
 }
 
-return FoodManifestHeader
+export default FoodManifestHeader

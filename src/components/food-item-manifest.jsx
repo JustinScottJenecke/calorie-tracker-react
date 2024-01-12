@@ -1,5 +1,6 @@
 import FoodItem from "./food-item/"
 import styles from './css/food-item-manifest.module.css'
+import FoodManifestHeader from './food-item-manifest/food-manifest-header'
 
 /**
  * Component to display the unmodified/untracked food items stored inside of the applications
@@ -20,7 +21,7 @@ const FoodItemManifest = (props) => {
     return (
         <section>
             <h3 className="subtitle">Food Item Repository:</h3>
-            <ul className={`columns is-multiline p-5`}>
+            <ul className={`columns is-multiline px-5`}>
             {
                 props.foodRepository.map(foodItem => {
                     return (
