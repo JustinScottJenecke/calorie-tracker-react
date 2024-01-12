@@ -25,7 +25,7 @@ const FoodItemManifest = (props) => {
 
     return (
         <section>
-            <FoodManifestHeader />
+            <FoodManifestHeader closeManifest={closeManifest}/>
             <ul className={`columns is-multiline px-5`}>
             {
                 props.foodRepository.map(foodItem => {
