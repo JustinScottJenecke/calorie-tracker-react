@@ -18,9 +18,14 @@ const FoodItemManifest = (props) => {
     // const foodRepository = props.foodRepository
     console.log(props.foodRepository)
 
+    const closeManifest = () => {
+        props.setFoodItemManifestModal(false)
+        props.setAddFodModalOptions(true)
+    } 
+
     return (
         <section>
-            <h3 className="subtitle">Food Item Repository:</h3>
+            <FoodManifestHeader />
             <ul className={`columns is-multiline px-5`}>
             {
                 props.foodRepository.map(foodItem => {
@@ -40,10 +45,7 @@ const FoodItemManifest = (props) => {
             <div>
                 <button 
                     className="button is-danger" 
-                    onClick={() => {
-                        props.setFoodItemManifestModal(false)
-                        props.setAddFodModalOptions(true)
-                    }}
+                    onClick={() => {closeManifest()}}
                 >
                     Cancel
                 </button>
