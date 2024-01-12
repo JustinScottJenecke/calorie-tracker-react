@@ -1,4 +1,5 @@
 import FoodItem from "./food-item/"
+import styles from './css/food-item-manifest.module.css'
 
 /**
  * Component to display the unmodified/untracked food items stored inside of the applications
