@@ -20,28 +20,30 @@ const AddFoodModal = (props) => {
 
     return (
         <section>
-            <div action="" method="get" className="is-flex-direction-column">
-                <div className="columns">
-                    <button 
-                        className={`button is-primary column ${styles['afm-button-option']}`}
-                        onClick={ () => {
-                            props.setAddFodModalOptions(false)
-                            props.setCreateNewFoodModal(true)
-                        }}
-                    >
-                        Enter new custom food item
-                    </button>
-                </div>
-                <div className="columns">
-                    <button 
-                        className={`button is-primary column ${styles['afm-button-option']}`}
-                        onClick={ () => {
-                            props.setAddFodModalOptions(false)
-                            props.setFoodItemManifestModal(true)
-                        }}
-                    >
-                        Select food item from manifest
-                    </button>
+            <div className='middle-align-wrapper'>
+                <div action="" method="get" className="is-flex-direction-column">
+                    <div className="columns">
+                        <button 
+                            className={`button is-primary column ${styles['afm-button-option']}`}
+                            onClick={ () => {
+                                props.setAddFodModalOptions(false)
+                                props.setCreateNewFoodModal(true)
+                            }}
+                        >
+                            Enter new custom food item
+                        </button>
+                    </div>
+                    <div className="columns">
+                        <button 
+                            className={`button is-primary column ${styles['afm-button-option']}`}
+                            onClick={ () => {
+                                props.setAddFodModalOptions(false)
+                                props.setFoodItemManifestModal(true)
+                            }}
+                        >
+                            Select food item from manifest
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
