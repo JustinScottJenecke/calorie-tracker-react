@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-// import styles from "./navigation.module.css"
+// import styles from "../css/navigation/navigation.module.css"
 
 const NavMenu = () => {
 

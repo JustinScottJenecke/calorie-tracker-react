@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import styles from './css/add-food-modal-options.module.css'
+import utilStyles from './css/ui/cancel-btn.module.css'
 
 /**
  * Gives the user the option to select food items from Food repository or create a custom
@@ -18,35 +19,34 @@ import styles from './css/add-food-modal-options.module.css'
 const AddFoodModal = (props) => {
 
     return (
-        <div>
-            <button className={`button is-dark ${styles['cancel-btn']}`}>
-                X
-            </button>
-            <div action="" method="get" className="is-flex-direction-column">
-                <div className="columns">
-                    <button 
-                        className={`button is-primary column ${styles['afm-button-option']}`}
-                        onClick={ () => {
-                            props.setAddFodModalOptions(false)
-                            props.setCreateNewFoodModal(true)
-                        }}
-                    >
-                        Enter new custom food item
-                    </button>
-                </div>
-                <div className="columns">
-                    <button 
-                        className={`button is-primary column ${styles['afm-button-option']}`}
-                        onClick={ () => {
-                            props.setAddFodModalOptions(false)
-                            props.setFoodItemManifestModal(true)
-                        }}
-                    >
-                        Select food item from manifest
-                    </button>
+        <section>
+            <div className='middle-align-wrapper'>
+                <div action="" method="get" className="is-flex-direction-column">
+                    <div className="columns">
+                        <button 
+                            className={`button is-primary column ${styles['afm-button-option']}`}
+                            onClick={ () => {
+                                props.setAddFodModalOptions(false)
+                                props.setCreateNewFoodModal(true)
+                            }}
+                        >
+                            Enter new custom food item
+                        </button>
+                    </div>
+                    <div className="columns">
+                        <button 
+                            className={`button is-primary column ${styles['afm-button-option']}`}
+                            onClick={ () => {
+                                props.setAddFodModalOptions(false)
+                                props.setFoodItemManifestModal(true)
+                            }}
+                        >
+                            Select food item from manifest
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
