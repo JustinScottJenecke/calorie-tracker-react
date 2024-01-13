@@ -16,7 +16,7 @@ import FoodManifestHeader from './food-item-manifest/food-manifest-header'
 const FoodItemManifest = (props) => {
 
     // const foodRepository = props.foodRepository
-    console.log(props.foodRepository)
+    // console.log(props.foodRepository)
 
     const closeManifest = () => {
         props.setFoodItemManifestModal(false)
@@ -30,12 +30,11 @@ const FoodItemManifest = (props) => {
             {
                 props.foodRepository.map(foodItem => {
                     return (
-                        <li className="column is-6">
+                        <li className="column is-6" key={foodItem.id}>
                             <FoodItem
-                                key={foodItem.id}
                                 useCase="repository"
                                 foodItem={foodItem}
-                            // addBtnHandler={trackFoodItem}
+                                addBtnHandler={props.trackFoodItem}
                             />
                         </li>
                     )

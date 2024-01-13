@@ -49,6 +49,7 @@ const TrackingFoodItemsProcess = (props) => {
                     foodRepository={props.foodRepository}
                     setAddFodModalOptions={setAddFodModalOptions}
                     setFoodItemManifestModal={setFoodItemManifestModal}
+                    trackFoodItem={props.trackFoodItem}
                 />
             }
         </section>
