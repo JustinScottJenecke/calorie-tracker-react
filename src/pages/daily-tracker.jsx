@@ -146,33 +146,21 @@ const DailyTracker = () => {
                     stopTrackFoodItemsProcesss={stopTrackFoodItemsProcesss}
                 />
             }
-            <section className="columns">
-                <aside className="column is-6">
-                    <h3 className="subtitle">Food Item Repository:</h3>
-                    {
-                        foodRepository.map(foodItem => {
-                            return (
-                                <FoodItem 
-                                    key={foodItem.id} 
-                                    useCase="repository"
-                                    foodItem={foodItem}
-                                    addBtnHandler={trackFoodItem}
-                                />
-                            )
-                        })
-                    }
-                </aside>
-                <aside className="column is-6">
+            <section className="">
+                <aside className="">
                     <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
                 </aside>
             </section>
             <hr />
+            {/* ======== Manual Tests for Tracker Display: =======  */}
             {/* <AddFoodModal /> */}
             {/* <button className="button" onClick={() => { addFoodFromRepo(1) }}>Add Food</button> */}
-            <button className="button" onClick={() => { addEnergy(100) }}>Add 100 kj</button>
+            
+            {/* <button className="button" onClick={() => { addEnergy(100) }}>Add 100 kj</button>
             <button className="button" onClick={() => { addProtein(10) }}>Add 10 Protein</button>
             <button className="button" onClick={() => { addFats(10) }}>Add 10 Fats</button>
-            <button className="button" onClick={() => { addCarbs(10) }}>Add 10 Carbs</button>
+            <button className="button" onClick={() => { addCarbs(10) }}>Add 10 Carbs</button> */}
+
             {/* <button className="button" onClick={() => {(500)}}>Add mock food item</button> */}
         </main>
     )
