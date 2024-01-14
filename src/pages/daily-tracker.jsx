@@ -105,6 +105,18 @@ const DailyTracker = () => {
         });
     }
 
+    /**
+     * Sets processActive state to false to unfreeze scrolling on daily-tracker.jsx
+     * sets setTrackingFoodItemsProcess to false to close trackingFoodItems process modal
+     * Uses 2 setter functions
+     * - setProcessActive()
+     * - setTrackingFoodItemsProcess()
+     */
+    const stopTrackFoodItemsProcesss = () => {
+        setProcessActive(false)
+        setTrackingFoodItemsProcess(false)
+    }
+
     // =================================== Template ====================================
 
     return (
@@ -131,6 +143,7 @@ const DailyTracker = () => {
                     setTrackingFoodItemsProcess={setTrackingFoodItemsProcess} 
                     foodRepository={foodRepository}
                     trackFoodItem={trackFoodItem}
+                    stopTrackFoodItemsProcesss={stopTrackFoodItemsProcesss}
                 />
             }
             <section className="columns">
