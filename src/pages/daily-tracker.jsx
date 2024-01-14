@@ -146,11 +146,9 @@ const DailyTracker = () => {
                     stopTrackFoodItemsProcesss={stopTrackFoodItemsProcesss}
                 />
             }
-            <section className="">
-                <aside className="">
-                    <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
-                </aside>
-            </section>
+            <div className="">
+                <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
+            </div>
             <hr />
             {/* ======== Manual Tests for Tracker Display: =======  */}
             {/* <AddFoodModal /> */}

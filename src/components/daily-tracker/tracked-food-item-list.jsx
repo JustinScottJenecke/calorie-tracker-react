@@ -13,7 +13,9 @@ const TrackedFoodItemList = (props) => {
                 {
                     trackedFoodItems.map(foodItem => {
                         return (
-                            <FoodItem key={foodItem.id} foodItem={foodItem}/>
+                            <li key={foodItem.id} >
+                                <FoodItem foodItem={foodItem}/>
+                            </li>
                         )
                     })
                 }
