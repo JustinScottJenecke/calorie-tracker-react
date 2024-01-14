@@ -25,6 +25,12 @@ const TrackingFoodItemsProcess = (props) => {
 
     return (
         <section className={`popup-modal is-flex-direction-column`}>
+            <button 
+                className="button is-dark is-align-self-flex-end m-2" 
+                onClick={() => {props.stopTrackFoodItemsProcesss()}} 
+            >
+                X
+            </button>
             { 
                 showAddFoodModalOptions 
                 && 
