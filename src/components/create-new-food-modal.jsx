@@ -3,7 +3,7 @@ const CreateNewFoodModal = (props) => {
     return (
         <section>
             <h1 className="title has-text-centered has-text-light">Create New Food</h1>
-            <form>
+            <form className="middle-align-wrapper">
                 <input className={`field input`} type="text" placeholder="Food item name here.." />
 
                 {/* if once off serving */}
