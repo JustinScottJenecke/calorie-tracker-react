@@ -9,11 +9,11 @@ const TrackedFoodItemList = (props) => {
     return (
         <div>
             <h3 className="subtitle">Tracked Food Items:</h3> 
-            <ul>
+            <ul className="px-5">
                 {
                     trackedFoodItems.map(foodItem => {
                         return (
-                            <li key={foodItem.id} >
+                            <li key={foodItem.id} className="p-5 mx-5" >
                                 <FoodItem foodItem={foodItem}/>
                             </li>
                         )
