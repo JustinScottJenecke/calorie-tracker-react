@@ -25,6 +25,7 @@ const FoodItemManifest = (props) => {
 
     return (
         <section>
+            <h1 className="title has-text-centered has-text-light">Select Food to Track</h1>
             <FoodManifestHeader closeManifest={closeManifest}/>
             <ul className={`columns is-multiline px-5`}>
             {
