@@ -41,15 +41,6 @@ const FoodItemManifest = (props) => {
                 })
             }
             </ul>
-            <div>
-                <button 
-                    className="button is-danger" 
-                    onClick={() => {closeManifest()}}
-                >
-                    Cancel
-                </button>
-            </div>
-
         </section>
     )
 }
