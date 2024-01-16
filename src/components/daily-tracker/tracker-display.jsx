@@ -26,22 +26,22 @@ const TrackerDisplay = (props) => {
                 </h2>
             </section>
             <hr></hr>
-            <section className="columns">
-                <div className="column is-4 is-flex-direction-column">
+            <section className="">
+                <div className="is-flex-direction-column p-3 has-text-centered">
                     <div>Total</div>
                     <div>{energy} {energyUnit}</div>
                 </div>
-                <div className="column is-8">
+                <div className="p-3">
                     <ul className="columns">
-                        <div className="column is-flex-direction-column">
+                        <div className="column is-flex-direction-column has-text-centered">
                             <div>Protein</div>
                             <div>{macroNutrients.protein.toFixed(2)}g</div>
                         </div>
-                        <div className="column is-flex-direction-column">
+                        <div className="column is-flex-direction-column has-text-centered">
                             <div>Fats</div>
                             <div>{macroNutrients.fats.toFixed(2)}g</div>
                         </div>
-                        <div className="column is-flex-direction-column">
+                        <div className="column is-flex-direction-column has-text-centered">
                             <div>Carbohydrates</div>
                             <div>{macroNutrients.carbohydrates.toFixed(2)}g</div>
                         </div>
