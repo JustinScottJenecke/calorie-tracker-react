@@ -148,6 +148,15 @@ const DailyTracker = () => {
             }
             <div className="">
                 <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
+                <br />
+                {trackedFoodItems.length === 0 && 
+                    <div className="has-text-centered">
+                        Tracker for day is empty..
+                        <br />
+                        Please add food items to start tracking your energy intake.
+                    </div>
+                }
+                
             </div>
             <hr />
             {/* ======== Manual Tests for Tracker Display: =======  */}
