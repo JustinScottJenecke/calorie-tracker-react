@@ -38,9 +38,9 @@ const FoodItem = (props) => {
             <li>- Category: {foodItem.category}</li>
             <li className="mt-4">Macros:</li>
                 <ul className="columns">
-                    <li className="column">- Protein: {foodItem.macros.protein}g</li>
-                    <li className="column">- Fats: {foodItem.macros.fats}g</li>
-                    <li className="column">- Carbohydrates: {foodItem.macros.carbohydrates}g</li>
+                    <li className="column">- Protein: {foodItem.macros.protein.toFixed(2)}g</li>
+                    <li className="column">- Fats: {foodItem.macros.fats.toFixed(2)}g</li>
+                    <li className="column">- Carbohydrates: {foodItem.macros.carbohydrates.toFixed(2)}g</li>
                 </ul>
             </ul>
             <div className="mt-4">
