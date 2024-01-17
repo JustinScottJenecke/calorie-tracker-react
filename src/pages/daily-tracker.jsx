@@ -154,6 +154,7 @@ const DailyTracker = () => {
                         Tracker for day is empty..
                         <br />
                         Please add food items to start tracking your energy intake.
+                        hello world
                     </div>
                 }
                 
