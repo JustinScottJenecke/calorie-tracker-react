@@ -121,7 +121,7 @@ const DailyTracker = () => {
 
     return (
         <main className={processActive ? 'frozen-page' : 'scrollable-page'}>
-            <h2 className="title">Daily View</h2>
+            <h2 className="title has-text-centered">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">

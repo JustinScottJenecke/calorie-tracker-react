@@ -21,15 +21,15 @@ const TrackerDisplay = (props) => {
         <header>
 
             <section>
-                <h2 className="subtitle">
+                <h2 className="subtitle has-text-centered">
                     Energy and Macronutrients
                 </h2>
             </section>
             <hr></hr>
             <section className="">
-                <div className="is-flex-direction-column p-3 has-text-centered">
-                    <div>Total</div>
-                    <div>{energy} {energyUnit}</div>
+                <div className="is-flex-direction-column p-3 has-text-centered my-2">
+                    <div className="subtitle">Total</div>
+                    <div className="title">{energy} {energyUnit}</div>
                 </div>
                 <div className="p-3">
                     <ul className="columns">
