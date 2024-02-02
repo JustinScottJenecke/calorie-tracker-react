@@ -54,7 +54,7 @@ export const createFoodFactory = (id, name, energy, weight, protein, fats, carbs
 export const calcEnergyAndMacrosByServing = (foodItem, servingInput) => {
 
     // console.log(foodItem)
-    console.log(servingInput)
+    // console.log(servingInput)
 
     // extract properties from food item
     let {name, energy, unit, category, serving, macros} = foodItem
@@ -88,7 +88,7 @@ export const calcEnergyAndMacrosByServing = (foodItem, servingInput) => {
             }, 
         }
 
-        console.log(createdFoodItem)
+        // console.log(createdFoodItem)
 
         return createdFoodItem
         
