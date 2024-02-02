@@ -61,12 +61,14 @@ const FoodItem = (props) => {
                 </ul>
             </ul>
             <div className="mt-4">
-                <div>
-                    <div>Serving Size:</div>
-                    <div className="has-text-centered">
-                        <input className="has-text-centered" type="number" value={servingSizeState} onChange={(e) => { setServingSizeState(e.target.value) }} /> {servingUnit}
+                {useCase === 'repository' &&
+                    <div>
+                        <div>Serving Size:</div>
+                        <div className="has-text-centered">
+                            <input className="has-text-centered" type="number" value={servingSizeState} onChange={(e) => { setServingSizeState(e.target.value) }} /> {servingUnit}
+                        </div>
                     </div>
-                </div>
+                }
 
                 <br />
                 <div className="has-text-centered">
