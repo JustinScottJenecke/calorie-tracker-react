@@ -121,7 +121,7 @@ const DailyTracker = () => {
 
     return (
         <main className={processActive ? 'frozen-page' : 'scrollable-page'}>
-            <h2 className="title">Daily View</h2>
+            <h2 className="title has-text-centered m-4">Daily View</h2>
             <TrackerDisplay dailyEnergy={dailyEnergy} dailyProtein={dailyProtein} dailyFats={dailyFats} dailyCarbs={dailyCarbs} />
             <hr />
             <div className="has-text-centered">
@@ -146,33 +146,28 @@ const DailyTracker = () => {
                     stopTrackFoodItemsProcesss={stopTrackFoodItemsProcesss}
                 />
             }
-            <section className="columns">
-                <aside className="column is-6">
-                    <h3 className="subtitle">Food Item Repository:</h3>
-                    {
-                        foodRepository.map(foodItem => {
-                            return (
-                                <FoodItem 
-                                    key={foodItem.id} 
-                                    useCase="repository"
-                                    foodItem={foodItem}
-                                    addBtnHandler={trackFoodItem}
-                                />
-                            )
-                        })
-                    }
-                </aside>
-                <aside className="column is-6">
-                    <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
-                </aside>
-            </section>
+            <div className="p-2">
+                <TrackedFoodItemList trackedFoodItems={trackedFoodItems} />
+                <br />
+                {trackedFoodItems.length === 0 && 
+                    <div className="has-text-centered">
+                        Tracker for day is empty..
+                        <br />
+                        Please add food items to start tracking your energy intake.
+                    </div>
+                }
+                
+            </div>
             <hr />
+            {/* ======== Manual Tests for Tracker Display: =======  */}
             {/* <AddFoodModal /> */}
             {/* <button className="button" onClick={() => { addFoodFromRepo(1) }}>Add Food</button> */}
-            <button className="button" onClick={() => { addEnergy(100) }}>Add 100 kj</button>
+            
+            {/* <button className="button" onClick={() => { addEnergy(100) }}>Add 100 kj</button>
             <button className="button" onClick={() => { addProtein(10) }}>Add 10 Protein</button>
             <button className="button" onClick={() => { addFats(10) }}>Add 10 Fats</button>
-            <button className="button" onClick={() => { addCarbs(10) }}>Add 10 Carbs</button>
+            <button className="button" onClick={() => { addCarbs(10) }}>Add 10 Carbs</button> */}
+
             {/* <button className="button" onClick={() => {(500)}}>Add mock food item</button> */}
         </main>
     )
