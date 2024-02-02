@@ -22,7 +22,13 @@ const FoodItem = (props) => {
     const [servingSize, servingUnit] = foodItem.unit.split("-")
 
     // templates
-    const addBtn = <button className="button is-success mt-2" onClick={() => { props.addBtnHandler(foodItem.id, servingSizeState) }}>Add</button>
+    const addBtn = (
+        <button
+            className="button is-success mt-2 px-5"
+            onClick={() => { props.addBtnHandler(foodItem.id, servingSizeState) }}>
+            Add
+        </button>
+    )
 
     // hooks
     const [servingSizeState, setServingSizeState] = useState(servingSize)
@@ -30,23 +36,43 @@ const FoodItem = (props) => {
     //====== Template ======
 
     return (
-        <div className="box">
+        <div className="box is-flex-direction-column">
             <ul>
-            <li className="subtitle has-text-centered">{foodItem.name}</li>
-            <li>Details:</li>
-            <li>- Energy: {foodItem.energy}kj per {foodItem.unit}</li>
-            <li>- Category: {foodItem.category}</li>
-            <li className="mt-4">Macros:</li>
+                <li className="subtitle has-text-centered">{foodItem.name}</li>
+                <li>Details:</li>
+                <ul>
+                    <li>Energy: {foodItem.energy}kj per {foodItem.unit}</li>
+                    <li>Category: {foodItem.category}</li>
+                </ul>
+                <li className="mt-4">Macros:</li>
                 <ul className="columns">
-                    <li className="column">- Protein: {foodItem.macros.protein.toFixed(2)}g</li>
-                    <li className="column">- Fats: {foodItem.macros.fats.toFixed(2)}g</li>
-                    <li className="column">- Carbohydrates: {foodItem.macros.carbohydrates.toFixed(2)}g</li>
+                    <li className="column is-flex-direction-column">
+                        <div className="has-text-centered">Protein:</div>
+                        <div className="has-text-centered">{foodItem.macros.protein.toFixed(2)}g</div>
+                    </li>
+                    <li className="column is-flex-direction-column is-align-items-center">
+                        <div className="has-text-centered">Fats:</div>
+                        <div className="has-text-centered">{foodItem.macros.fats.toFixed(2)}g</div>
+                    </li>
+                    <li className="column is-flex-direction-column is-align-items-center">
+                        <div className="has-text-centered">Carbohydrates:</div>
+                        <div className="has-text-centered">{foodItem.macros.carbohydrates.toFixed(2)}g</div>
+                    </li>
                 </ul>
             </ul>
             <div className="mt-4">
-                <input type="number" value={servingSizeState} onChange={(e) => {setServingSizeState(e.target.value)}} /> {servingUnit}
+                <div>
+                    <div>Serving Size:</div>
+                    <div className="has-text-centered">
+                        <input className="has-text-centered" type="number" value={servingSizeState} onChange={(e) => { setServingSizeState(e.target.value) }} /> {servingUnit}
+                    </div>
+                </div>
+
                 <br />
-                {useCase === 'repository' ? addBtn : ''}
+                <div className="has-text-centered">
+                    {useCase === 'repository' && addBtn}
+                </div>
+
             </div>
         </div>
     )
