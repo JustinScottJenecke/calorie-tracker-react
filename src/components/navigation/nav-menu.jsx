@@ -6,19 +6,19 @@ const NavMenu = () => {
     return (
         <nav>
             <ul className='columns is-multiline'>
-                <Link to={`daily-tracker`} className='button column is-6'>
+                <Link to={`daily-tracker`} className='button column is-6 is-info'>
                     Daily Tracker
                 </Link>
-                <Link to={`weekly-view`} className='button column is-6'>
+                <Link to={`weekly-view`} className='button column is-6 is-sucess'>
                     Weekly View
                 </Link>
-                <Link to={`monthly-view`} className='button column is-6'>
+                <Link to={`monthly-view`} className='button column is-6 is-background-warning'>
                     Monthly View
                 </Link>
-                <Link to={`food-management`} className='button column is-6'>
+                <Link to={`food-management`} className='button column is-6 is-background-primary'>
                     Food Management
                 </Link>
-                <Link to={`personal-management`} className='button column is-6'>
+                <Link to={`personal-management`} className='button column is-6 is-background-dark'>
                     Personal Management
                 </Link>
             </ul>
