@@ -6,7 +6,10 @@ import AddFoodModalOptions from "../add-food-modal-options"
 /**
  * Process component serves as a controller for component cycling when a user is
  * attempting to add a food item to the list of tracked food items. Is able to track state
- * of which component needs to be displayed/
+ * of which component needs to be displayed
+ * 
+ * They function very similar to routers and the components that are rendered inside of a process modal 
+ * appear as sub-modals
  * 
  * @returns {JSX}
  */
