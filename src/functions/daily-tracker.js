@@ -2,7 +2,6 @@
  * About: Util functions for business logic of the daily tracker domain
  */
 
-
 /**
  * Name: createFoodFactory
  * Helper function to create instances of FoodItem objects
@@ -40,7 +39,7 @@ export const createFoodFactory = (id, name, energy, weight, protein, fats, carbs
  * 
  * @param {number} value the energy or macronutrient to be converted (energy, protein, etc.)
  * @param {number} servingSize base serving unit of food (100g, 100ml, etc.)
- * @param {number} servingInput serving input from user
+ * @param {number} servingIn  put serving input from user
  * 
  * @returns {number} energy or grams of nutrients for the serving size selected by user
  */
@@ -60,25 +59,12 @@ export const createFoodFactory = (id, name, energy, weight, protein, fats, carbs
  */
 export const calcEnergyAndMacrosByServing = (foodItem, servingInput) => {
 
-    // console.log(foodItem)
-    // console.log(servingInput)
-
     // extract properties from food item
     let {name, energy, unit, category, serving, macros} = foodItem
 
     if (servingInput) {
-        
         // extract unit of measurement from foodItem's unit property
         const [servingSize, servingUnit] = unit.split("-")
-
-        /*
-            foodItem.energy = helperEnergyMacroCalculation(energy, servingSize, servingInput)
-            foodItem.macros.protein = helperEnergyMacroCalculation(macros.protein, servingSize, servingInput)
-            foodItem.macros.fats = helperEnergyMacroCalculation(macros.fats, servingSize, servingInput)
-            foodItem.macros.carbohydrates = helperEnergyMacroCalculation(macros.carbohydrates, servingSize, servingInput)
-
-            foodItem.unit =  `${servingInput}-${servingUnit}`
-        */
 
         const createdFoodItem = {
             name: name,
@@ -95,10 +81,7 @@ export const calcEnergyAndMacrosByServing = (foodItem, servingInput) => {
             }, 
         }
 
-        // console.log(createdFoodItem)
-
         return createdFoodItem
-        
     } 
     else {
         return {
