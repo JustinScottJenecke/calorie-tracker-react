@@ -4,7 +4,14 @@
 
 
 /**
- * 
+ * Name: createFoodFactory
+ * Helper function to create instances of FoodItem objects
+ * @param {number} id
+ * @param {string} name
+ * @param {number} energy
+ * @param {number} protein
+ * @param {number} fats
+ * @param {number} carbs
  */
 export const createFoodFactory = (id, name, energy, weight, protein, fats, carbs) => {
     return {
